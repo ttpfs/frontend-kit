@@ -131,7 +131,13 @@ type DrawerWithConfig = DrawerBase & {
 type DrawerProps = DrawerWithChildren | DrawerWithConfig;
 
 const DrawerImpl: React.FC<DrawerProps> = (props) => {
-	const { placement = "right", className, ...rest } = props;
+	const {
+		placement = "right",
+		showClose = true,
+		showHandle = true,
+		className,
+		...rest
+	} = props;
 
 	const content =
 		"children" in props ? (
@@ -147,8 +153,8 @@ const DrawerImpl: React.FC<DrawerProps> = (props) => {
 								e.stopPropagation();
 							}}
 						>
-							{rest.showHandle && <DrawerRoot.Handle />}
-							{rest.showClose && <DrawerRoot.CloseTrigger />}
+							{showHandle && <DrawerRoot.Handle />}
+							{showClose && <DrawerRoot.CloseTrigger />}
 							<DrawerRoot.Header className={className?.header}>
 								<DrawerRoot.Heading>{rest.title}</DrawerRoot.Heading>
 								{rest.description && (

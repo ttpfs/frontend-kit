@@ -281,6 +281,9 @@ export const DEFAULT_ICON_REGISTRY = {
 	trash: {
 		outline: "icon-[lucide--trash-2]",
 	},
+	tray: {
+		outline: "icon-[lucide--inbox]",
+	},
 	undo: {
 		outline: "icon-[lucide--undo]",
 	},

@@ -1,0 +1,50 @@
+{
+	"author": {
+		"email": "nam71441@gmail.com",
+		"name": "TtPhong-FS"
+	},
+	"dependencies": {
+	},
+	"description": "",
+	"devDependencies": {
+		"@packages/typescript-config": "workspace:*",
+		"@types/react": "^19",
+		"@types/react-dom": "^19",
+		"tsup": "^8.5.1",
+		"typescript": "5.9.2"
+	},
+	"exports": {
+		".": {
+			"import": "./dist/index.js",
+			"types": "./dist/index.d.ts"
+		},
+		"./*": null,
+	},
+	"files": [
+		"dist"
+	],
+	"homepage": "https://github.com/ttpfs/frontend-kit/tree/main#readme",
+	"keywords": [
+		"typescript",
+	],
+	"license": "MIT",
+	"main": "./dist/index.js",
+	"name": {{packageName}},
+	"peerDependencies": {
+		"react": "^19",
+		"react-dom": "^19",
+	},
+	"publishConfig": {
+		"registry": "https://npm.pkg.github.com"
+	},
+	"repository": {
+		"type": "git",
+	  "url": "https://github.com/ttpfs/frontend-kit.git#main"
+	},
+	"scripts": {
+		"build": "tsup"
+	},
+	"type": "module",
+	"types": "./dist/index.d.ts",
+	"version": "0.0.0"
+}

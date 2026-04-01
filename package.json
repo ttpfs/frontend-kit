@@ -1,22 +1,23 @@
 {
-  "devDependencies": {
-    "@biomejs/biome": "2.4.10",
-    "turbo": "^2.9.3",
-    "typescript": "5.9.2"
-  },
-  "engines": {
-    "node": ">=18"
-  },
-  "name": "frontend-kit",
-  "packageManager": "pnpm@9.0.0",
-  "private": true,
-  "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev",
-    "format:fix": "pnpx @biomejs/biome check --write \"**/*.{ts,tsx}\"",
-    "lint": "pnpx @biomejs/biome lint \"**/*.{ts,tsx}\"",
-    "lint:fix": "pnpx @biomejs/biome lint --write v",
-    "release": "pnpm install && pnpm build && pnpm --filter=./packages/* publish --no-git-checks",
-    "storybook": "pnpm --filter=./apps/* storybook"
-  }
+	"devDependencies": {
+		"@biomejs/biome": "2.4.10",
+		"@turbo/gen": "^2.8.0",
+		"turbo": "^2.9.3",
+		"typescript": "5.9.2"
+	},
+	"engines": {
+		"node": ">=18"
+	},
+	"name": "frontend-kit",
+	"packageManager": "pnpm@9.0.0",
+	"private": true,
+	"scripts": {
+		"build": "turbo run build",
+		"dev": "turbo run dev",
+		"format:fix": "pnpx @biomejs/biome check --write \"**/*.{ts,tsx}\"",
+		"lint": "pnpx @biomejs/biome lint \"**/*.{ts,tsx}\"",
+		"lint:fix": "pnpx @biomejs/biome lint --write v",
+		"release": "pnpm install && pnpm build && pnpm --filter=./packages/* publish --no-git-checks",
+		"storybook": "pnpm --filter=./apps/* storybook"
+	}
 }

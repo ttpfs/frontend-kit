@@ -1,5 +1,5 @@
 import { getPageNumbers } from "@/utils";
-import { Pagination as BasePagination, PaginationSummary } from "@heroui/react";
+import { Pagination as BasePagination } from "@heroui/react";
 import type React from "react";
 import { useMemo, useState } from "react";
 
@@ -10,10 +10,17 @@ type PaginationProps = {
 	onPageChange?: (page: number) => void;
 	totalPages?: number;
 	showEllipsis?: boolean;
+	summary?: string | React.ReactNode;
 };
 
 const PaginationImpl: React.FC<PaginationProps> = (props) => {
-	const { onPageChange, page, showEllipsis = true, totalPages = 3 } = props;
+	const {
+		onPageChange,
+		page,
+		showEllipsis = true,
+		summary,
+		totalPages = 3,
+	} = props;
 
 	const [_page, setPage] = useState<number>(page || 1);
 
@@ -46,6 +53,7 @@ const PaginationImpl: React.FC<PaginationProps> = (props) => {
 
 	return (
 		<PaginationRoot>
+			<PaginationRoot.Summary>{summary}</PaginationRoot.Summary>
 			<PaginationRoot.Content>
 				<PaginationRoot.Item>
 					<PaginationRoot.Previous
@@ -88,7 +96,6 @@ const PaginationImpl: React.FC<PaginationProps> = (props) => {
 
 const Pagination = Object.assign(PaginationImpl, {
 	displayName: "Pagination",
-	Summary: PaginationSummary,
 });
 
 export { Pagination };
