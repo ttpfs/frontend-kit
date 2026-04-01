@@ -3,7 +3,7 @@ import {
 	type CheckboxRootProps,
 } from "@heroui/react";
 import type React from "react";
-import type { PropsWithChildren } from "react";
+import { type PropsWithChildren } from "react";
 
 const CheckboxRoot = BaseCheckbox;
 const CheckboxContent = BaseCheckbox.Content;

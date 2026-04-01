@@ -1,8 +1,8 @@
 import { cn } from "@heroui/styles";
 import React from "react";
-import type { TypedIconName } from "./iconMap";
+import { type TypedIconName } from "./iconMap";
 import { getIconClass } from "./registry";
-import type { IconSize, IconVariant } from "./types";
+import { type IconSize, type IconVariant } from "./types";
 
 const SIZE_MAP: Record<IconSize, number> = {
 	"2xl": 32,

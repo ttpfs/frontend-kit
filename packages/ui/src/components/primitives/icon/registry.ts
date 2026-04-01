@@ -1,5 +1,5 @@
 import { DEFAULT_ICON_REGISTRY } from "./iconMap";
-import type { IconRegistry, IconVariant } from "./types";
+import { type IconRegistry, type IconVariant } from "./types";
 
 let registry: IconRegistry = { ...DEFAULT_ICON_REGISTRY };
 

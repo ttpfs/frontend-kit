@@ -28,31 +28,33 @@ export const DateField = <T extends FieldValues>(props: DateFieldProps<T>) => {
 
 	return (
 		<Controller
-			name={name}
 			control={control}
+			name={name}
 			render={({ field, fieldState: { invalid, error } }) => (
-				<Field	
+				<Field
+					className={className?.wrapper}
+					fullWidth
 					granularity={granularity}
-					hourCycle={24}
 					hideTimeZone
-					shouldForceLeadingZeros
-					minValue={minDay ? todayDate ? undefined}
-					isInvalid={invalid}
+					hourCycle={24}
 					isDisabled={field.disabled ?? disabled}
+					isInvalid={invalid}
 					isReadOnly={readonly}
 					isRequired={required}
-					className={className?.wrapper}
+					minValue={minDay ? todayDate : undefined}
 					name={field.name}
-					onChange={(value) => field.onChange(formatCalendarToISO(value, granularity))}
-					value={field.value ? parseDate(field.value) : null}
 					onBlur={field.onBlur}
+					onChange={(value) =>
+						field.onChange(formatCalendarToISO(value, granularity))
+					}
 					ref={field.ref}
-					fullWidth
+					shouldForceLeadingZeros
+					value={field.value ? parseDate(field.value) : null}
 				>
 					<Label className={className?.label}>{label}</Label>
 					<Field.Group className={className?.group}>
 						<Field.Prefix>
-							<Icon name="calendar" className="text-muted" />
+							<Icon className="text-muted" name="calendar" />
 						</Field.Prefix>
 						<Field.Input className={className?.input}>
 							{(segment) => <Field.Segment segment={segment} />}

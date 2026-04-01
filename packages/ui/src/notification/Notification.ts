@@ -1,4 +1,4 @@
-import type { INotification, NotificationConfig } from "@/types";
+import { type INotification, type NotificationConfig } from "@/types";
 import { toast } from "@heroui/react";
 
 export class Notification implements INotification {

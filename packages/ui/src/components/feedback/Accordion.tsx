@@ -1,5 +1,5 @@
 import { Icon } from "@/components/primitives";
-import type { CustomStyle } from "@/types";
+import { type CustomStyle } from "@/types";
 import {
 	type AccordionBodyProps,
 	type AccordionHeadingProps,

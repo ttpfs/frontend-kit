@@ -36,26 +36,26 @@ export const DatePickerField = <T extends FieldValues>(
 
 	return (
 		<Controller
-			name={name}
 			control={control}
+			name={name}
 			render={({ field, fieldState: { invalid, error } }) => (
 				<DatePicker
-					key={granularity}
-					minValue={minDay ? todayDate : undefined}
 					className={cn("w-fit min-w-64", className?.wrapper)}
 					granularity={granularity}
 					hideTimeZone
 					hourCycle={24}
+					isDisabled={disabled}
+					isInvalid={invalid}
+					isReadOnly={readonly}
+					isRequired={required}
+					key={granularity}
+					minValue={minDay ? todayDate : undefined}
 					name={field.name}
-					shouldForceLeadingZeros
 					onChange={(value) =>
 						field.onChange(formatCalendarToISO(value, granularity))
 					}
+					shouldForceLeadingZeros
 					value={field.value ? parseDate(field.value) : null}
-					isDisabled={disabled}
-					isInvalid={invalid}
-					isRequired={required}
-					isReadOnly={readonly}
 				>
 					{({ state }) => (
 						<>
@@ -114,9 +114,9 @@ export const DatePickerField = <T extends FieldValues>(
 											hideTimeZone
 											hourCycle={24}
 											name="time"
+											onChange={(v) => state.setTimeValue(v as TimeValue)}
 											shouldForceLeadingZeros
 											value={state.timeValue}
-											onChange={(v) => state.setTimeValue(v as TimeValue)}
 										>
 											<TimeField.Group variant="secondary">
 												<TimeField.Input>

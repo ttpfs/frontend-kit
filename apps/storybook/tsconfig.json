@@ -1,7 +1,24 @@
 {
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
+  "compilerOptions": {
+    "baseUrl": ".",
+    "noEmit": false,
+    "outDir": "dist",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "dist"
+  ],
+  "extends": "@packages/typescript-config/react-library.json",
+  "include": [
+    "src",
+    "vite.config.ts"
+  ],
+  "types": [
+    "vite/client"
   ]
 }

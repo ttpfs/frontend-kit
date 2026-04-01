@@ -6,7 +6,7 @@ import {
 	Sidebar,
 } from "@/components";
 import { SidebarProvider } from "@/providers";
-import type { Meta, StoryObj } from "@storybook/react-vite";
+import { type Meta, type StoryObj } from "@storybook/react-vite";
 
 const data = {
 	navMain: [

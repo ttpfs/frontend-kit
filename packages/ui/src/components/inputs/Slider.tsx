@@ -1,6 +1,6 @@
-import { Label } from "@/components/primitives";
-import { Slider as BaseSlider, SliderRootProps } from "@heroui/react";
+import { Slider as BaseSlider, type SliderRootProps } from "@heroui/react";
 import type React from "react";
+import { Label } from "@/components/primitives";
 
 interface BaseSliderProps extends SliderRootProps {
 	label: string;
@@ -29,7 +29,7 @@ const SliderImpl: React.FC<SliderProps> = (props) => {
 					<>
 						<BaseSlider.Fill />
 						{state.values.map((v, i) => (
-							<BaseSlider.Thumb key={v} index={i} />
+							<BaseSlider.Thumb index={i} key={v} />
 						))}
 					</>
 				)}
