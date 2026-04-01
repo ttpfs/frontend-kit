@@ -6,12 +6,10 @@
         "^build"
       ],
       "inputs": [
-        "$TURBO_DEFAULT$",
-        ".env*"
+        "$TURBO_DEFAULT$"
       ],
       "outputs": [
-        ".next/**",
-        "!.next/cache/**"
+        "dist/**"
       ]
     },
     "check-types": {
