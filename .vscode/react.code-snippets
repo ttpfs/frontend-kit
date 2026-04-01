@@ -1,0 +1,64 @@
+{
+	"Create React useState": {
+		"body": [
+			"const [${1:state}, set${1/(.*)/${1:/capitalize}/}] = useState(${2:null});"
+		],
+		"prefix": "us"
+	},
+	"React Arrow Component (FC, named export)": {
+		"body": [
+			"import React from \"react\";",
+			"",
+			"interface Props {",
+			"  $2",
+			"};",
+			"",
+			"export const ${TM_FILENAME_BASE}: React.FC<Props> = (props) => {",
+			" const {} = props ",
+			"  return (",
+			"    <div>",
+			"      $0",
+			"    </div>",
+			"  );",
+			"};"
+		],
+		"description": "React arrow function component with React.FC<Props>, named export",
+		"prefix": "rfc"
+	},
+	"React Arrow Component (typed props with generic)": {
+		"body": [
+			"type Props<T> = {",
+			"  $2",
+			"};",
+			"",
+			"export const ${TM_FILENAME_BASE} = <T,> (props: Props<T>) => {",
+			" const {} = props ",
+			"  return (",
+			"    <div>",
+			"      $0",
+			"    </div>",
+			"  );",
+			"};"
+		],
+		"description": "React arrow function component with typed Props, no generic, named export",
+		"prefix": "rfg"
+	},
+	"React Arrow Component (typed props, no generic)": {
+		"body": [
+			"interface Props {",
+			"  $2",
+			"};",
+			"",
+			"export const ${TM_FILENAME_BASE} = (props: Props) => {",
+			" const {} = props ",
+			"  return (",
+			"    <div>",
+			"      $0",
+			"    </div>",
+			"  );",
+			"};"
+		],
+		"description": "React arrow function component with typed Props, no generic, named export",
+		"prefix": "rfp"
+	}
+}

@@ -1,0 +1,34 @@
+{
+	"[typescript]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"auto-close-tag.fullMode": true,
+	"cSpell.words": ["cmdk", "filepond", "heroui", "iconify", "querybuilder"],
+	"css.validate": false,
+	"editor.codeActionsOnSave": {
+		"source.fixAll.biome": "explicit",
+		"source.fixAll.eslint": "never",
+		"source.fixAll.prettier": "never",
+		"source.organizeImports.biome": "explicit",
+		"source.removeUnusedImports": "explicit",
+		"source.sort.json": "explicit"
+	},
+	"editor.defaultFormatter": "biomejs.biome",
+	"editor.formatOnSave": true,
+	"editor.formatOnSaveMode": "file",
+	"files.eol": "\n",
+	"tailwindCSS.classAttributes": ["class", "className", "tw", "cn"],
+	"tailwindCSS.experimental.classRegex": [
+		["className\\s*=\\s*[\"'`]([^\"'`]*)[\"'`]", "[^\"'`]*"],
+		["class\\s*=\\s*[\"'`]([^\"'`]*)[\"'`]", "[^\"'`]*"],
+		["(?:cn|clsx)\\(([^)]*)\\)", "[\"'`]([^\"'`]*)[\"'`]"]
+	],
+	"tailwindCSS.experimental.configFile": "packages/ui-web/src/styles.css",
+	"tailwindCSS.lint.suggestCanonicalClasses": "ignore",
+	"terminal.integrated.defaultProfile.windows": "Git Bash",
+	"terminal.integrated.enableMultiLinePasteWarning": "never",
+	"terminal.integrated.shellIntegration.enabled": false
+}

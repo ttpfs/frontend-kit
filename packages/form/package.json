@@ -1,0 +1,56 @@
+{
+	"author": {
+		"email": "nam71441@gmail.com",
+		"name": "TtPhong-FS"
+	},
+	"dependencies": {
+		"@hookform/resolvers": "^5.2.2",
+		"@ttpfs/ui-react": "1.0.5",
+		"react-hook-form": "7.72.0"
+	},
+	"description": "",
+	"devDependencies": {
+		"@internationalized/date": "^3.12.0",
+		"@packages/typescript-config": "workspace:*",
+		"@types/react": "^19",
+		"@types/react-dom": "^19",
+		"tsup": "^8.5.1",
+		"typescript": "5.9.2"
+	},
+	"exports": {
+		".": {
+			"import": "./dist/index.js",
+			"types": "./dist/index.d.ts"
+		},
+		"./*": null
+	},
+	"files": [
+		"dist"
+	],
+	"homepage": "https://github.com/ttpfs/form-react#",
+	"keywords": [
+		"form",
+		"typescript",
+		"field"
+	],
+	"license": "MIT",
+	"main": "./dist/index.js",
+	"name": "@ttpfs/form-react",
+	"peerDependencies": {
+		"react": "^19",
+		"react-dom": "^19",
+		"zod": "^4"
+	},
+	"publishConfig": {
+		"registry": "https://npm.pkg.github.com"
+	},
+	"repository": {
+		"url": "https://github.com/ttpfs/form-react.git"
+	},
+	"scripts": {
+		"build": "tsup"
+	},
+	"type": "module",
+	"types": "./dist/index.d.ts",
+	"version": "0.1.0"
+}
