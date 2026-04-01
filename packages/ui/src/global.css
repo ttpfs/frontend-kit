@@ -4,4 +4,3 @@
 @plugin "@iconify/tailwind4";
 
 @source "./**/*.{ts,tsx,js,jsx}";
-@source "../src/__storybook__/**/*.{ts,tsx,js,jsx}";

@@ -1,5 +1,5 @@
-import { Button, Icon, Modal } from "@/components";
 import { type Meta, type StoryObj } from "@storybook/react-vite";
+import { Button, Icon, Modal } from "@ttpfs/ui-react";
 
 const meta = {
 	component: Modal,

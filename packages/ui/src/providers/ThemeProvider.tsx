@@ -23,10 +23,10 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = (props) => {
 	} = props;
 	return (
 		<NextThemeProvider
-			disableTransitionOnChange={disableTransitionOnChange}
 			attribute={attribute}
-			enableSystem={enableSystem}
 			defaultTheme={defaultTheme}
+			disableTransitionOnChange={disableTransitionOnChange}
+			enableSystem={enableSystem}
 		>
 			{children}
 		</NextThemeProvider>

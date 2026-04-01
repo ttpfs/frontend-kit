@@ -1,33 +1,37 @@
 {
-  "dependencies": {
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4"
-  },
-  "devDependencies": {
-    "@chromatic-com/storybook": "^5.1.1",
-    "@packages/typescript-config": "workspace:*",
-    "@storybook/addon-a11y": "^10.3.3",
-    "@storybook/addon-docs": "^10.3.3",
-    "@storybook/addon-vitest": "^10.3.3",
-    "@storybook/react-vite": "^10.3.3",
-    "@types/node": "^24.12.0",
-    "@types/react": "^19.2.14",
-    "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^6.0.1",
-    "@vitest/coverage-v8": "^4.1.2",
-    "globals": "^17.4.0",
-    "storybook": "^10.3.3",
-    "typescript": "~5.9.3",
-    "vite": "^8.0.1",
-    "vitest": "^4.1.2"
-  },
-  "name": "storybook",
-  "private": true,
-  "scripts": {
-    "dev": "vite",
-    "preview": "vite preview",
-    "storybook": "storybook dev -p 6006"
-  },
-  "type": "module",
-  "version": "0.0.0"
+	"dependencies": {
+		"@ttpfs/ui-react": "workspace:*",
+		"react": "^19.2.4",
+		"react-dom": "^19.2.4"
+	},
+	"devDependencies": {
+		"@chromatic-com/storybook": "^5.1.1",
+		"@iconify/tailwind4": "^1.2.3",
+		"@packages/typescript-config": "workspace:*",
+		"@storybook/addon-a11y": "^10.3.3",
+		"@storybook/addon-docs": "^10.3.3",
+		"@storybook/addon-vitest": "^10.3.3",
+		"@storybook/react-vite": "^10.3.3",
+		"@tailwindcss/postcss": "^4.2.2",
+		"@types/node": "^24.12.0",
+		"@types/react": "^19.2.14",
+		"@types/react-dom": "^19.2.3",
+		"@vitejs/plugin-react": "^6.0.1",
+		"@vitest/coverage-v8": "^4.1.2",
+		"globals": "^17.4.0",
+		"storybook": "^10.3.3",
+		"tailwindcss": "^4.2.2",
+		"typescript": "~5.9.3",
+		"vite": "^8.0.1",
+		"vitest": "^4.1.2"
+	},
+	"name": "storybook",
+	"private": true,
+	"scripts": {
+		"dev": "vite",
+		"preview": "vite preview",
+		"storybook": "storybook dev -p 6006"
+	},
+	"type": "module",
+	"version": "0.0.0"
 }

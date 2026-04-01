@@ -1,14 +1,14 @@
-export { Avatar } from "./Avatar";
-export { Badge } from "./Badge";
-export { Chip } from "./Chip";
-export { ColorArea } from "./ColorArea";
-export { ColorSwatch } from "./ColorSwatch";
-export { ColorSwatchPicker } from "./ColorSwatchPicker";
-export { FieldError } from "./FieldError";
-export { ListBox } from "./Listbox";
-export { ProgressBar } from "./ProgressBar";
-export { ProgressCircle } from "./ProgressCircle";
-export { Table } from "./Table";
-export { TagGroup } from "./TagGroup";
-export { ValueDisplay } from "./ValueDisplay";
-export {Tag} from './Tag'
+export * from "./Avatar";
+export * from "./Badge";
+export * from "./Chip";
+export * from "./ColorArea";
+export * from "./ColorSwatch";
+export * from "./ColorSwatchPicker";
+export * from "./FieldError";
+export * from "./Listbox";
+export * from "./ProgressBar";
+export * from "./ProgressCircle";
+export * from "./Table";
+export * from "./Tag";
+export * from "./TagGroup";
+export * from "./ValueDisplay";

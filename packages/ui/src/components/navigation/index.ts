@@ -1,4 +1,4 @@
-export { Breadcrumbs } from "./Breadcrumbs";
-export { Pagination } from "./Pagination";
-export { Sidebar } from "./Sidebar";
-export { Tabs } from "./Tabs";
+export * from "./Breadcrumbs";
+export * from "./Pagination";
+export * from "./Sidebar";
+export * from "./Tabs";

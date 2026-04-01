@@ -1,5 +1,5 @@
-import { Icon, Radio, RadioGroup } from "@/components";
 import { type Meta, type StoryObj } from "@storybook/react-vite";
+import { Icon, Radio, RadioGroup } from "@ttpfs/ui-react";
 
 const meta = {
 	component: Radio,
@@ -35,7 +35,7 @@ export const CustomIcon: Story = {
 		return (
 			<RadioGroup label="Plan">
 				<Radio
-					icon={<Icon className="text-white" size="xs" name="plus" />}
+					icon={<Icon className="text-white" name="plus" size="xs" />}
 					{...args}
 				/>
 			</RadioGroup>

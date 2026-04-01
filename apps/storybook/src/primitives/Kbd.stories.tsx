@@ -1,5 +1,5 @@
-import { Kbd } from "@/components";
 import { type Meta, type StoryObj } from "@storybook/react-vite";
+import { Kbd } from "@ttpfs/ui-react";
 
 const meta = {
 	component: Kbd,

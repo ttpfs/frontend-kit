@@ -90,6 +90,10 @@ export const SidebarProvider: React.FC<Props> = (props) => {
 	return (
 		<SidebarContext.Provider value={contextValue}>
 			<div
+				className={cn(
+					"group/sidebar-wrapper flex min-h-svh w-full has-data-[variant=inset]:bg-sidebar",
+					className,
+				)}
 				data-slot="sidebar-wrapper"
 				style={
 					{
@@ -98,10 +102,6 @@ export const SidebarProvider: React.FC<Props> = (props) => {
 						...style,
 					} as React.CSSProperties
 				}
-				className={cn(
-					"group/sidebar-wrapper flex min-h-svh w-full has-data-[variant=inset]:bg-sidebar",
-					className,
-				)}
 				{...rest}
 			>
 				{children}

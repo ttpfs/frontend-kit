@@ -1,5 +1,5 @@
-import { Button, Collapsible } from "@/components";
 import { type Meta, type StoryObj } from "@storybook/react-vite";
+import { Button, Collapsible } from "@ttpfs/ui-react";
 
 const meta = {
 	component: Collapsible,

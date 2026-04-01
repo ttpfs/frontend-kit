@@ -16,6 +16,7 @@
     "format:fix": "pnpx @biomejs/biome check --write \"**/*.{ts,tsx}\"",
     "lint": "pnpx @biomejs/biome lint \"**/*.{ts,tsx}\"",
     "lint:fix": "pnpx @biomejs/biome lint --write v",
-    "release": "pnpm install && pnpm build && pnpm --filter=./packages/* publish --no-git-checks"
+    "release": "pnpm install && pnpm build && pnpm --filter=./packages/* publish --no-git-checks",
+    "storybook": "pnpm --filter=./apps/* storybook"
   }
 }

@@ -1,5 +1,5 @@
-import { Pagination } from "@/components";
 import { type Meta, type StoryObj } from "@storybook/react-vite";
+import { Pagination } from "@ttpfs/ui-react";
 
 const meta = {
 	component: Pagination,

@@ -1,5 +1,5 @@
-import { Description, Icon, Label, Switch } from "@/components";
 import { type Meta, type StoryObj } from "@storybook/react-vite";
+import { Description, Icon, Label, Switch } from "@ttpfs/ui-react";
 
 const meta = {
 	component: Switch,

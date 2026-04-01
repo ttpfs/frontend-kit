@@ -1,7 +1,7 @@
-export { Card } from "./Card";
-export { Collapsible } from "./Collapsible";
-export { Flex } from "./Flex";
-export { Grid } from "./Grid";
-export { ScrollShadow } from "./ScrollShadow";
-export { Separator } from "./Separator";
-export { Surface } from "./Surface";
+export * from "./Card";
+export * from "./Collapsible";
+export * from "./Flex";
+export * from "./Grid";
+export * from "./ScrollShadow";
+export * from "./Separator";
+export * from "./Surface";

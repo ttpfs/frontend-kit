@@ -1,5 +1,5 @@
-import { Checkbox, Description, Icon, Label } from "@/components";
 import { type Meta, type StoryObj } from "@storybook/react-vite";
+import { Checkbox, Description, Icon, Label } from "@ttpfs/ui-react";
 
 const meta = {
 	component: Checkbox,

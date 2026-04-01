@@ -1,1 +1,1 @@
-export { ImageZoom } from "./ImageZoom";
+export * from "./ImageZoom";

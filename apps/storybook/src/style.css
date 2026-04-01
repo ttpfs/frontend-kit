@@ -1,0 +1,4 @@
+@import "tailwindcss";
+@import "@ttpfs/ui-react/global.css";
+
+@source "./src/**/*.{ts,tsx}";

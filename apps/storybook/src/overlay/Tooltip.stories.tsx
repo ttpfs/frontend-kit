@@ -1,5 +1,5 @@
-import { Button, Tooltip } from "@/components";
 import { type Meta, type StoryObj } from "@storybook/react-vite";
+import { Button, Tooltip } from "@ttpfs/ui-react";
 
 const meta = {
 	component: Tooltip,
@@ -15,7 +15,7 @@ export const Default: Story = {
 		children: (
 			<>
 				<Button variant="primary">Custom Offset</Button>
-				<Tooltip.Content showArrow offset={12}>
+				<Tooltip.Content offset={12} showArrow>
 					<p>Custom offset from trigger</p>
 				</Tooltip.Content>
 			</>

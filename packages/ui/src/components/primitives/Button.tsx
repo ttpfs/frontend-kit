@@ -41,8 +41,8 @@ const Button: React.FC<ButtonProps> = (props) => {
 	return (
 		<HerouiButton
 			className={cn(className, "h-9")}
-			isPending={loading}
 			isIconOnly={isIconOnly || !children}
+			isPending={loading}
 			onPress={onClick}
 			{...rest}
 		>

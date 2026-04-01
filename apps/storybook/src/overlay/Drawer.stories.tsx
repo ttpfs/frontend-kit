@@ -1,5 +1,5 @@
-import { Button, Drawer } from "@/components";
 import { type Meta, type StoryObj } from "@storybook/react-vite";
+import { Button, Drawer } from "@ttpfs/ui-react";
 
 const meta = {
 	component: Drawer,

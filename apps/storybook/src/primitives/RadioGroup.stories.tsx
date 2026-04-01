@@ -1,5 +1,5 @@
-import { RadioGroup } from "@/components";
 import { type Meta, type StoryObj } from "@storybook/react-vite";
+import { RadioGroup } from "@ttpfs/ui-react";
 
 const meta = {
 	component: RadioGroup,

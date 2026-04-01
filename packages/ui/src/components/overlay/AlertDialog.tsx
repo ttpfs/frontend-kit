@@ -196,4 +196,13 @@ const AlertDialog = Object.assign(AlertDialogImpl, {
 	Trigger: AlertDialogTrigger,
 });
 
-export { AlertDialog };
+export {
+	AlertDialog,
+	type AlertDialogBodyProps,
+	type AlertDialogContentProps,
+	type AlertDialogFooterProps,
+	type AlertDialogHeaderProps,
+	type AlertDialogIconProps,
+	type AlertDialogProps,
+	type AlertDialogTriggerProps,
+};

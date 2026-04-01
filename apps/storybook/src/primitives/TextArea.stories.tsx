@@ -1,5 +1,5 @@
-import { TextArea } from "@/components";
 import { type Meta, type StoryObj } from "@storybook/react-vite";
+import { TextArea } from "@ttpfs/ui-react";
 
 const meta = {
 	component: TextArea,

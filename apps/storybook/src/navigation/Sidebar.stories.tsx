@@ -1,12 +1,12 @@
+import { type Meta, type StoryObj } from "@storybook/react-vite";
 import {
 	Collapsible,
 	Icon,
 	type IconName,
 	Separator,
 	Sidebar,
-} from "@/components";
-import { SidebarProvider } from "@/providers";
-import { type Meta, type StoryObj } from "@storybook/react-vite";
+	SidebarProvider,
+} from "@ttpfs/ui-react";
 
 const data = {
 	navMain: [
@@ -175,8 +175,8 @@ export const Default: Story = {
 						<div className="flex items-center gap-2 px-4">
 							<Sidebar.Trigger className="-ml-1" />
 							<Separator
-								orientation="vertical"
 								className="mr-2 data-[orientation=vertical]:h-4"
+								orientation="vertical"
 							/>
 						</div>
 					</header>
@@ -213,7 +213,7 @@ export function NavMain({
 			<Sidebar.GroupLabel>Platform</Sidebar.GroupLabel>
 			<Sidebar.Menu>
 				{items.map((item) => (
-					<Collapsible key={item.title} defaultExpanded={item.isActive}>
+					<Collapsible defaultExpanded={item.isActive} key={item.title}>
 						<Sidebar.MenuItem>
 							<Collapsible.Heading>
 								<Collapsible.Trigger className={"w-full"}>
