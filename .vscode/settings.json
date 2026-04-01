@@ -26,7 +26,7 @@
 		["class\\s*=\\s*[\"'`]([^\"'`]*)[\"'`]", "[^\"'`]*"],
 		["(?:cn|clsx)\\(([^)]*)\\)", "[\"'`]([^\"'`]*)[\"'`]"]
 	],
-	"tailwindCSS.experimental.configFile": "packages/ui-web/src/styles.css",
+	"tailwindCSS.experimental.configFile": "packages/ui/src/global.css",
 	"tailwindCSS.lint.suggestCanonicalClasses": "ignore",
 	"terminal.integrated.defaultProfile.windows": "Git Bash",
 	"terminal.integrated.enableMultiLinePasteWarning": "never",

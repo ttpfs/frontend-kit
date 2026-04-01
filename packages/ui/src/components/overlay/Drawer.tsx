@@ -142,10 +142,10 @@ const DrawerImpl: React.FC<DrawerProps> = (props) => {
 				<DrawerRoot.Backdrop variant={rest.variant} {...rest}>
 					<DrawerRoot.Content placement={placement}>
 						<DrawerRoot.Dialog
+							className={cn(className?.container)}
 							onWheelCapture={(e) => {
 								e.stopPropagation();
 							}}
-							className={cn(className?.container)}
 						>
 							{rest.showHandle && <DrawerRoot.Handle />}
 							{rest.showClose && <DrawerRoot.CloseTrigger />}
