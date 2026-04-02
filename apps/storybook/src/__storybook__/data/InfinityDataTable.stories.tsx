@@ -1,35 +1,58 @@
 import { type Meta, type StoryObj } from "@storybook/react-vite";
 import {
 	createColumnHelper,
-	DataTableTanstack,
-	type PaginationState,
+	InfinityDataTable,
 	type SortingState,
 } from "@ttpfs/table-react";
-import { Chip } from "@ttpfs/ui-react";
-import { useState } from "react";
+import { Chip, type Selection } from "@ttpfs/ui-react";
+import { useCallback, useRef, useState } from "react";
 import { generateUsers, type User } from "@/mock/user";
 
+const ITEMS_PER_PAGE = 6;
+
+const allUsers = generateUsers(80);
+
 const meta = {
-	component: DataTableTanstack,
+	component: InfinityDataTable,
 	decorators: [
 		(Story, context) => {
-			const [pagination, setPagination] = useState<PaginationState>({
-				pageIndex: 0,
-				pageSize: 4,
-			});
+			const [selectedKeys, setSelectedKeys] = useState<Selection>(new Set());
 
 			const [sorting, setSorting] = useState<SortingState>([]);
 
-			console.log(sorting, pagination);
+			const [items, setItems] = useState<User[]>(() =>
+				allUsers.slice(0, ITEMS_PER_PAGE),
+			);
+			const [isLoading, setIsLoading] = useState(false);
+			const isLoadingRef = useRef(false);
+			const hasMore = items.length < allUsers.length;
+
+			const loadMore = useCallback(() => {
+				if (!hasMore || isLoadingRef.current) return;
+				isLoadingRef.current = true;
+				setIsLoading(true);
+				setTimeout(() => {
+					setItems((prev) => allUsers.slice(0, prev.length + ITEMS_PER_PAGE));
+					setIsLoading(false);
+					requestAnimationFrame(() => {
+						isLoadingRef.current = false;
+					});
+				}, 300);
+			}, [hasMore]);
+
 			return (
 				<Story
 					{...context}
 					args={{
 						...context.args,
-						onPaginationChange: setPagination,
+						data: items,
+						isFetching: isLoading,
+						onLoadMore: loadMore,
+						onSelectionChange: setSelectedKeys,
 						onSortingChange: setSorting,
-						pagination,
+						selectedKeys,
 						sorting,
+						totalElements: allUsers.length,
 					}}
 				/>
 			);
@@ -38,8 +61,8 @@ const meta = {
 	parameters: {
 		layout: "padded",
 	},
-	title: "data/DataTableTanstack",
-} satisfies Meta<typeof DataTableTanstack>;
+	title: "data/InfinityDataTable",
+} satisfies Meta<typeof InfinityDataTable>;
 
 export default meta;
 
@@ -68,13 +91,10 @@ const columns = [
 	columnHelper.accessor("email", { header: "Email", meta: { label: "Email" } }),
 ];
 
-const users = generateUsers(84);
-
 export const Default: Story = {
 	args: {
 		columns,
-		data: users,
+		enableRowSelection: true,
 		tableId: "user",
-		totalElements: users.length,
 	},
 };

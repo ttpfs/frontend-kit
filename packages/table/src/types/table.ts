@@ -10,7 +10,6 @@ declare module "@tanstack/react-table" {
 import {
 	type ColumnDef,
 	type PaginationState,
-	type RowSelectionState,
 	type SortingState,
 } from "@tanstack/react-table";
 import { type Selection } from "@ttpfs/ui-react";
@@ -26,7 +25,7 @@ type RowActionItem = {
 	render?: (item: RowActionItem) => React.ReactNode;
 };
 
-interface DataTableTanstackProps<TData, TValue = TData> {
+interface DataTableProps<TData, TValue = TData> {
 	tableId: string;
 	data: TData[];
 	columns: ColumnDef<TData, TValue>[];
@@ -38,17 +37,13 @@ interface DataTableTanstackProps<TData, TValue = TData> {
 	// State
 	pagination?: PaginationState;
 	sorting?: SortingState;
-	rowSelection?: RowSelectionState;
 	onSortingChange?: React.Dispatch<React.SetStateAction<SortingState>>;
 	onPaginationChange?: React.Dispatch<React.SetStateAction<PaginationState>>;
-	onRowSelectionChange?: React.Dispatch<
-		React.SetStateAction<RowSelectionState>
-	>;
 	selectedKeys?: Selection;
 	onSelectionChange?: React.Dispatch<React.SetStateAction<Selection>>;
 
 	enableViewOptions?: boolean;
-	enableRowSelection?: boolean;
+	enableSelection?: boolean;
 	enableExpanding?: boolean; // for group row
 
 	// For Custom empty state fallback
@@ -59,4 +54,29 @@ interface DataTableTanstackProps<TData, TValue = TData> {
 		| undefined;
 }
 
-export type { DataTableTanstackProps, RowActionItem };
+interface InfinityDataTableProps<TData, TValue = TData> {
+	tableId: string;
+	data: TData[];
+	columns: ColumnDef<TData, TValue>[];
+	totalElements: number;
+	totalPages?: number;
+
+	selectionMode?: "multiple" | "single"; // default 'multiple'
+
+	// State
+	sorting?: SortingState;
+	onSortingChange?: React.Dispatch<React.SetStateAction<SortingState>>;
+	selectedKeys?: Selection;
+	onSelectionChange?: React.Dispatch<React.SetStateAction<Selection>>;
+
+	enableViewOptions?: boolean;
+	enableSelection?: boolean;
+
+	// For Custom empty state fallback
+	emptyState?: React.ReactNode;
+
+	isFetching: boolean;
+	onLoadMore: () => Promise<void> | void;
+}
+
+export type { DataTableProps, InfinityDataTableProps, RowActionItem };

@@ -1,3 +1,4 @@
 export * from "./column";
-export { DataTableTanstack } from "./DataTableTanstack";
+export { DataTable } from "./DataTable";
 export { DataTableViewOptions } from "./DataTableViewOptions";
+export { InfinityDataTable } from "./InfinityDataTable";

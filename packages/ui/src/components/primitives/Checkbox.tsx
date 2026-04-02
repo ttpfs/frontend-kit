@@ -12,7 +12,7 @@ const CheckboxIndicator = BaseCheckbox.Indicator;
 
 interface CheckboxProps
 	extends PropsWithChildren,
-		Omit<CheckboxRootProps, "className" | "children"> {
+		Omit<CheckboxRootProps, "children"> {
 	icon?: React.ReactNode;
 }
 

@@ -9,12 +9,7 @@ export function DataTableViewOptions<TData>({
 	return (
 		<Popover>
 			<Popover.Trigger>
-				<Button
-					className="text-neutral-700"
-					isIconOnly
-					size="sm"
-					variant="secondary"
-				>
+				<Button className="text-neutral-700" size="sm" variant="secondary">
 					<Icon className="text-neutral-700" name="eye" />
 					<span className="max-sm:hidden">Hiển thị</span>
 				</Button>
@@ -31,6 +26,7 @@ export function DataTableViewOptions<TData>({
 							return (
 								<div className="flex py-1 items-center" key={column.id}>
 									<Checkbox
+										className={"gap-1.5"}
 										isSelected={column.getIsVisible()}
 										name={column.id}
 										onChange={() => column.toggleVisibility()}
