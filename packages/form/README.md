@@ -1,6 +1,6 @@
 # @ttpfs/form-react
 
-> Version: **0.1.7**
+> Version: **0.1.8**
 
 Thư viện form fields cho React, tích hợp [react-hook-form](https://react-hook-form.com) và [Zod](https://zod.dev) validation, xây dựng trên `@ttpfs/ui-react`.
 
@@ -74,7 +74,6 @@ export function MyForm() {
 | Hook | Mô tả |
 |---|---|
 | `useForm` | Khởi tạo form với schema Zod |
-| `useField` | Truy cập state của một field |
 | `useFieldArray` | Quản lý mảng field động |
 | `useFormSubmit` | Xử lý submit logic |
 | `useStore` | Truy cập form store |

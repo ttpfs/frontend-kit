@@ -17,17 +17,17 @@ interface UseFormReturn<TValues extends FieldValues>
 interface UseFormSubmitOptions<
 	TValues extends FieldValues,
 	// biome-ignore lint/suspicious/noExplicitAny: <>
-	TSuccess extends Record<string, any> = TValues,
+	TSuccess extends Record<string, any> = Record<string, any>,
 	TError extends Error = Error,
 > {
-	onValid: (values: TValues) => Promise<void> | void;
+	onValid: (values: TValues) => Promise<TSuccess>;
 	onInvalid?: (
 		errors: FieldErrors<TValues>,
 		event?: React.BaseSyntheticEvent,
 	) => Promise<void> | void;
 
-	onSuccess?: (data: TSuccess) => void;
-	onError?: (error: TError) => void;
+	onSuccess?: (data?: TSuccess) => void;
+	onError?: (error?: TError) => void;
 }
 
 export type { UseFormProps, UseFormReturn, UseFormSubmitOptions };
