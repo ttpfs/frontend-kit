@@ -1,8 +1,7 @@
 import { cn } from "@heroui/styles";
 import React from "react";
-import { type TypedIconName } from "./iconMap";
 import { getIconClass } from "./registry";
-import { type IconSize, type IconVariant } from "./types";
+import { type IconSize, type IconVariant, type TypedIconName } from "./types";
 
 const SIZE_MAP: Record<IconSize, number> = {
 	"2xl": 32,
@@ -14,7 +13,7 @@ const SIZE_MAP: Record<IconSize, number> = {
 };
 
 export interface IconProps extends React.HTMLAttributes<HTMLSpanElement> {
-	name: TypedIconName | (string & {});
+	name: TypedIconName;
 	variant?: IconVariant;
 	size?: keyof typeof SIZE_MAP;
 }
@@ -40,14 +39,14 @@ export const Icon = React.forwardRef<HTMLSpanElement, IconProps>(
 
 		return (
 			<span
-				ref={ref}
+				aria-hidden="true"
 				className={cn("iconify inline-block shrink-0", iconClass, className)}
+				ref={ref}
 				style={{
 					height: finalSize,
 					width: finalSize,
 					...style,
 				}}
-				aria-hidden="true"
 				{...rest}
 			/>
 		);

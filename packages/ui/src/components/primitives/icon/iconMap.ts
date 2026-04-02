@@ -1,4 +1,6 @@
-export const DEFAULT_ICON_REGISTRY = {
+import { type IconDefinition, type TypedIconName } from "./types";
+
+export const DEFAULT_ICON_REGISTRY: Record<TypedIconName, IconDefinition> = {
 	activity: {
 		outline: "icon-[lucide--activity]",
 	},
@@ -134,6 +136,7 @@ export const DEFAULT_ICON_REGISTRY = {
 	eye: {
 		outline: "icon-[lucide--eye]",
 	},
+
 	"eye-off": {
 		outline: "icon-[lucide--eye-off]",
 	},
@@ -274,14 +277,14 @@ export const DEFAULT_ICON_REGISTRY = {
 	shield: {
 		outline: "icon-[lucide--shield]",
 	},
-	"shoping-cart": {
-		outline: "icon-[lucide--shopping-cart]",
-	},
 	"shopping-bag": {
 		outline: "icon-[lucide--shopping-bag]",
 	},
 	"shopping-basket": {
 		outline: "icon-[lucide--shopping-basket]",
+	},
+	"shopping-cart": {
+		outline: "icon-[lucide--shopping-cart]",
 	},
 	shuffle: {
 		outline: "icon-[lucide--shuffle]",
@@ -350,5 +353,3 @@ export const DEFAULT_ICON_REGISTRY = {
 		outline: "icon-[lucide--zoom-out]",
 	},
 };
-
-export type TypedIconName = keyof typeof DEFAULT_ICON_REGISTRY;

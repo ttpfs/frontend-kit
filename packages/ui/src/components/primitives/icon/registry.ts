@@ -1,5 +1,9 @@
 import { DEFAULT_ICON_REGISTRY } from "./iconMap";
-import { type IconRegistry, type IconVariant } from "./types";
+import {
+	type IconRegistry,
+	type IconVariant,
+	type TypedIconName,
+} from "./types";
 
 let registry: IconRegistry = { ...DEFAULT_ICON_REGISTRY };
 
@@ -11,7 +15,7 @@ export const registerIcons = (icons: IconRegistry) => {
 };
 
 export const getIconClass = (
-	name: string,
+	name: TypedIconName,
 	variant: IconVariant = "outline",
 ) => {
 	const icon = registry[name];
