@@ -53,6 +53,9 @@ export const DEFAULT_ICON_REGISTRY = {
 	"calendar-search": {
 		outline: "icon-[lucide--calendar-search]",
 	},
+	check: {
+		outline: "icon-[lucide--check]",
+	},
 	"chevron-down": {
 		outline: "icon-[lucide--chevron-down]",
 	},
