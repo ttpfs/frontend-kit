@@ -2,17 +2,15 @@ import {
 	type ButtonRootProps,
 	cn,
 	Button as HerouiButton,
-	type PressEvent,
 } from "@heroui/react";
 import type React from "react";
 import { Spinner } from "./Spinner";
 
-interface ButtonProps extends Omit<ButtonRootProps, "children" | "onClick"> {
+interface ButtonProps extends Omit<ButtonRootProps, "children"> {
 	children?: React.ReactNode;
 	loading?: boolean;
 	icon?: React.ReactNode;
 	iconRight?: React.ReactNode;
-	onClick?: (e: PressEvent) => void;
 	loadingIcon?: React.ReactNode;
 	loadingLabel?: string;
 }
@@ -25,8 +23,8 @@ const Button: React.FC<ButtonProps> = (props) => {
 		isIconOnly,
 		loadingIcon,
 		icon,
-		onClick,
 		iconRight,
+		onPress,
 		loading = false,
 		...rest
 	} = props;
@@ -43,7 +41,7 @@ const Button: React.FC<ButtonProps> = (props) => {
 			className={cn(className, "h-9")}
 			isIconOnly={isIconOnly || !children}
 			isPending={loading}
-			onPress={onClick}
+			onPress={onPress}
 			{...rest}
 		>
 			{({ isPending }) => (
