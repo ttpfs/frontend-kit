@@ -111,7 +111,7 @@ type DrawerWithChildren = DrawerBase & {
 
 type DrawerWithConfig = DrawerBase & {
 	title: string;
-	trigger: React.ReactNode;
+	trigger?: React.ReactNode;
 	description?: string;
 	showClose?: boolean;
 	showHandle?: boolean;
@@ -144,7 +144,9 @@ const DrawerImpl: React.FC<DrawerProps> = (props) => {
 			props.children
 		) : (
 			<>
-				<DrawerRoot.Trigger>{rest.trigger}</DrawerRoot.Trigger>
+				{rest.trigger && (
+					<DrawerRoot.Trigger>{rest.trigger}</DrawerRoot.Trigger>
+				)}
 				<DrawerRoot.Backdrop variant={rest.variant} {...rest}>
 					<DrawerRoot.Content placement={placement}>
 						<DrawerRoot.Dialog

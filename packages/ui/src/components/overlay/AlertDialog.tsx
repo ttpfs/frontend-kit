@@ -119,7 +119,7 @@ type AlertDialogWithChildren = AlertDialogBase & {
 type AlertDialogWithConfig = AlertDialogBase & {
 	title: string;
 	icon?: React.ReactNode;
-	trigger: React.ReactNode;
+	trigger?: React.ReactNode;
 	description?: string;
 	showClose?: boolean;
 	body: React.ReactNode;
@@ -146,7 +146,9 @@ const AlertDialogImpl: React.FC<AlertDialogProps> = (props) => {
 			props.children
 		) : (
 			<>
-				<AlertDialogRoot.Trigger>{rest.trigger}</AlertDialogRoot.Trigger>
+				{rest.trigger && (
+					<AlertDialogRoot.Trigger>{rest.trigger}</AlertDialogRoot.Trigger>
+				)}
 				<AlertDialogRoot.Backdrop
 					onWheelCapture={(e) => {
 						e.stopPropagation();

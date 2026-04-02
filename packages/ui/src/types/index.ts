@@ -6,4 +6,5 @@ export type {
 	TimeValue,
 } from "@heroui/react";
 export type { INotification, NotificationConfig } from "./notification";
+export type { OverlayProps } from "./overlay";
 export type { CustomStyle } from "./style";

@@ -113,7 +113,7 @@ type ModalWithChildren = ModalBase & {
 type ModalWithConfig = ModalBase & {
 	title: string;
 	icon?: React.ReactNode;
-	trigger: React.ReactNode;
+	trigger?: React.ReactNode;
 	description?: string;
 	showClose?: boolean;
 	body: React.ReactNode;
@@ -140,7 +140,7 @@ const ModalImpl: React.FC<ModalProps> = (props) => {
 			props.children
 		) : (
 			<>
-				<ModalRoot.Trigger>{rest.trigger}</ModalRoot.Trigger>
+				{rest.trigger && <ModalRoot.Trigger>{rest.trigger}</ModalRoot.Trigger>}
 				<ModalRoot.Backdrop
 					onWheelCapture={(e) => {
 						e.stopPropagation();
