@@ -1,5 +1,6 @@
 {
 	"dependencies": {
+		"@ttpfs/form-react": "workspace:*",
 		"@ttpfs/table-react": "workspace:*",
 		"@ttpfs/ui-react": "workspace:*",
 		"react": "^19.2.4",
@@ -29,7 +30,8 @@
 		"tailwindcss": "^4.2.2",
 		"typescript": "~5.9.3",
 		"vite": "^8.0.1",
-		"vitest": "^4.1.2"
+		"vitest": "^4.1.2",
+		"zod": "^4.3.6"
 	},
 	"name": "storybook",
 	"private": true,

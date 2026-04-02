@@ -40,13 +40,13 @@ export const TextField = <TValues extends FieldValues>(
 		<Controller
 			control={control}
 			name={name}
-			render={({ field, fieldState: { error } }) => (
+			render={({ field, fieldState: { invalid, error } }) => (
 				<BaseTextField
 					aria-label={label ?? name}
 					className={className?.wrapper}
 					fullWidth
 					isDisabled={field.disabled ?? disabled}
-					isInvalid={!!error}
+					isInvalid={invalid}
 					isReadOnly={readonly}
 					isRequired={required}
 					name={field.name}
@@ -67,14 +67,13 @@ export const TextField = <TValues extends FieldValues>(
 						/>
 						{field.value?.length > 0 && (
 							<InputGroup.Suffix>
-								<CloseButton
-									className={"size-4"}
-									onClick={() => field.onChange("")}
-								/>
+								<CloseButton onClick={() => field.onChange("")}>
+									<Icon name="close" size="xs" />
+								</CloseButton>
 							</InputGroup.Suffix>
 						)}
 					</InputGroup>
-					{error ? (
+					{invalid ? (
 						<FieldError>{error?.message}</FieldError>
 					) : (
 						description && (
