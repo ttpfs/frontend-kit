@@ -27,7 +27,7 @@
 	"files": [
 		"dist"
 	],
-	"homepage": "https://github.com/ttpfs/form-react#",
+	"homepage": "https://github.com/ttpfs/frontend-kit/tree/main/packages/form#readme",
 	"keywords": [
 		"form",
 		"typescript",
@@ -45,7 +45,7 @@
 		"registry": "https://npm.pkg.github.com"
 	},
 	"repository": {
-		"url": "https://github.com/ttpfs/form-react.git"
+		"url": "https://github.com/ttpfs/frontend-kit.git"
 	},
 	"scripts": {
 		"build": "tsup"
