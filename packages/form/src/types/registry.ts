@@ -80,4 +80,14 @@ type FieldComponent<K extends FieldKey = FieldKey> = FieldTypeMap[K];
 
 type FieldRegistry = Record<FieldKey, FieldComponent>;
 
-export type { FieldComponent, FieldKey, FieldRegistry, FieldTypeMap };
+type BoundFields = {
+	[K in FieldKey]: FieldTypeMap[K];
+};
+
+export type {
+	BoundFields,
+	FieldComponent,
+	FieldKey,
+	FieldRegistry,
+	FieldTypeMap,
+};

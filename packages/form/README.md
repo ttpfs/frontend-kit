@@ -1,6 +1,6 @@
 # @ttpfs/form-react
 
-> Version: **0.1.5**
+> Version: **0.1.7**
 
 Thư viện form fields cho React, tích hợp [react-hook-form](https://react-hook-form.com) và [Zod](https://zod.dev) validation, xây dựng trên `@ttpfs/ui-react`.
 
@@ -86,5 +86,13 @@ Package hỗ trợ đăng ký custom field thông qua `fieldRegistry`, cho phép
 ```ts
 import { fieldRegistry } from "@ttpfs/form-react";
 
-fieldRegistry.register("custom", CustomFieldComponent);
+declare module "@ttpfs/form-react" {
+	interface FieldTypeMap {
+		CustomField: <TValues extends FieldValues>(
+			props: CustomFieldProps<TValues>
+		) => JSX.Element;
+	}
+}
+
+fieldRegistry.register("CustomField", CustomFieldComponent);
 ```
