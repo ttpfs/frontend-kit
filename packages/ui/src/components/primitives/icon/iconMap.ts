@@ -53,6 +53,24 @@ export const DEFAULT_ICON_REGISTRY = {
 	"calendar-search": {
 		outline: "icon-[lucide--calendar-search]",
 	},
+	carousel: {
+		outline: "icon-[lucide--gallery-horizontal]",
+	},
+	"chart-area": {
+		outline: "icon-[lucide--chart-area]",
+	},
+	"chart-column": {
+		outline: "icon-[lucide--chart-column]",
+	},
+	"chart-combined": {
+		outline: "icon-[lucide--chart-no-axes-combined]",
+	},
+	"chart-line": {
+		outline: "icon-[lucide--chart-line]",
+	},
+	"chart-pie": {
+		outline: "icon-[lucide--chart-pie]",
+	},
 	check: {
 		outline: "icon-[lucide--check]",
 	},
@@ -98,6 +116,9 @@ export const DEFAULT_ICON_REGISTRY = {
 	copy: {
 		outline: "icon-[lucide--copy]",
 	},
+	"credit-card": {
+		outline: "icon-[lucide--credit-card]",
+	},
 	custom: {
 		outline: "icon-[lucide--settings-2]",
 	},
@@ -134,9 +155,6 @@ export const DEFAULT_ICON_REGISTRY = {
 	global: {
 		outline: "icon-[lucide--globe]",
 	},
-	grid: {
-		outline: "icon-[lucide--layout-grid]",
-	},
 	heart: {
 		bold: "icon-[solar--heart-bold]",
 		outline: "icon-[lucide--heart]",
@@ -153,6 +171,15 @@ export const DEFAULT_ICON_REGISTRY = {
 	info: {
 		outline: "icon-[lucide--info]",
 	},
+	layers: {
+		outline: "icon-[lucide--layers]",
+	},
+	"layout-dashboard": {
+		outline: "icon-[lucide--layout-dashboard]",
+	},
+	"layout-grid": {
+		outline: "icon-[lucide--layout-grid]",
+	},
 	like: {
 		outline: "icon-[lucide--thumbs-up]",
 	},
@@ -160,7 +187,7 @@ export const DEFAULT_ICON_REGISTRY = {
 		outline: "icon-[lucide--list]",
 	},
 	lock: {
-		outline: "icon-[lucide--phone]",
+		outline: "icon-[lucide--lock]",
 	},
 	mail: {
 		outline: "icon-[lucide--mail]",
@@ -170,6 +197,9 @@ export const DEFAULT_ICON_REGISTRY = {
 	},
 	maximize: {
 		outline: "icon-[lucide--maximize]",
+	},
+	megaphone: {
+		outline: "icon-[lucide--megaphone]",
 	},
 	menu: {
 		outline: "icon-[lucide--menu]",
@@ -186,7 +216,6 @@ export const DEFAULT_ICON_REGISTRY = {
 	moon: {
 		outline: "icon-[lucide--moon]",
 	},
-
 	"more-horizontal": {
 		outline: "icon-[lucide--more-horizontal]",
 	},
@@ -236,11 +265,23 @@ export const DEFAULT_ICON_REGISTRY = {
 	settings: {
 		outline: "icon-[lucide--settings]",
 	},
+	shapes: {
+		outline: "icon-[lucide--shapes]",
+	},
 	share: {
 		outline: "icon-[lucide--share-2]",
 	},
 	shield: {
 		outline: "icon-[lucide--shield]",
+	},
+	"shoping-cart": {
+		outline: "icon-[lucide--shopping-cart]",
+	},
+	"shopping-bag": {
+		outline: "icon-[lucide--shopping-bag]",
+	},
+	"shopping-basket": {
+		outline: "icon-[lucide--shopping-basket]",
 	},
 	shuffle: {
 		outline: "icon-[lucide--shuffle]",
