@@ -14,15 +14,19 @@ const PopoverTrigger: React.FC<PopoverTriggerProps> = (props) => {
 	return <PopoverRoot.Trigger {...props}>{props.children}</PopoverRoot.Trigger>;
 };
 
-interface PopoverContentProps extends BasePopoverContentProps {
+interface PopoverContentProps
+	extends Omit<BasePopoverContentProps, "className"> {
 	heading: string | React.ReactNode;
+	className?: string;
 }
 
 const PopoverContent: React.FC<PopoverContentProps> = (props) => {
+	const { className, ...rest } = props;
+
 	return (
-		<PopoverRoot.Content {...props}>
+		<PopoverRoot.Content {...rest}>
 			<PopoverRoot.Arrow />
-			<PopoverRoot.Dialog>
+			<PopoverRoot.Dialog className={className}>
 				<PopoverRoot.Heading>{props.heading}</PopoverRoot.Heading>
 				{props.children}
 			</PopoverRoot.Dialog>

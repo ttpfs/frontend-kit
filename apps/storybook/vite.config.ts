@@ -1,7 +1,7 @@
 /// <reference types="vitest/config" />
 
 // https://vite.dev/config/
-import path from "node:path";
+import path, { resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { storybookTest } from "@storybook/addon-vitest/vitest-plugin";
 import react from "@vitejs/plugin-react";
@@ -15,6 +15,9 @@ const dirname =
 // More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
 export default defineConfig({
 	plugins: [react()],
+	resolve: {
+		alias: [{ find: "@", replacement: resolve(__dirname, "./src") }],
+	},
 	test: {
 		projects: [
 			{

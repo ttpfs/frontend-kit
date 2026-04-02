@@ -4,17 +4,22 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
 	plop.setGenerator("package", {
 		actions: [
 			{
-				path: "packages/{{name}}/package.json",
+				path: "packages/{{libName}}/package.json",
 				templateFile: "templates/package.json.hbs",
 				type: "add",
 			},
 			{
-				path: "packages/{{name}}/tsconfig.json",
+				path: "packages/{{libName}}/tsconfig.json",
 				templateFile: "templates/tsconfig.json.hbs",
 				type: "add",
 			},
 			{
-				path: "packages/{{name}}/src/index.ts",
+				path: "packages/{{libName}}/tsup.config.ts",
+				templateFile: "templates/tsup.config.ts.hbs",
+				type: "add",
+			},
+			{
+				path: "packages/{{libName}}/src/index.ts",
 				template: "export * from '' ",
 				type: "add",
 			},

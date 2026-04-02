@@ -4,6 +4,8 @@
 		"name": "TtPhong-FS"
 	},
 	"dependencies": {
+		"@tanstack/react-table": "^8.21.3",
+		"@ttpfs/ui-react": "workspace:*"
 	},
 	"description": "",
 	"devDependencies": {
@@ -29,17 +31,17 @@
 	],
 	"license": "MIT",
 	"main": "./dist/index.js",
-	"name": "{{packageName}}",
+	"name": "@ttpfs/table-react",
 	"peerDependencies": {
 		"react": "^19",
-		"react-dom": "^19",
+		"react-dom": "^19"
 	},
 	"publishConfig": {
 		"registry": "https://npm.pkg.github.com"
 	},
 	"repository": {
 		"type": "git",
-	  "url": "https://github.com/ttpfs/frontend-kit.git#main"
+		"url": "https://github.com/ttpfs/frontend-kit.git#main"
 	},
 	"scripts": {
 		"build": "tsup"

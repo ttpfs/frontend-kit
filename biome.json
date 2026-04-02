@@ -74,6 +74,7 @@
 				}
 			},
 			"suspicious": {
+				"noArrayIndexKey": "off",
 				"noEmptyInterface": "off"
 			}
 		}

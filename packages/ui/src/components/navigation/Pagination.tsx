@@ -1,7 +1,7 @@
-import { getPageNumbers } from "@/utils";
-import { Pagination as BasePagination } from "@heroui/react";
+import { Pagination as BasePagination, cn } from "@heroui/react";
 import type React from "react";
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
+import { getPageNumbers } from "@/utils";
 
 const PaginationRoot = BasePagination;
 
@@ -11,6 +11,12 @@ type PaginationProps = {
 	totalPages?: number;
 	showEllipsis?: boolean;
 	summary?: string | React.ReactNode;
+	className?: {
+		item?: string;
+		summary?: string;
+		prev?: string;
+		next?: string;
+	};
 };
 
 const PaginationImpl: React.FC<PaginationProps> = (props) => {
@@ -19,27 +25,25 @@ const PaginationImpl: React.FC<PaginationProps> = (props) => {
 		page,
 		showEllipsis = true,
 		summary,
-		totalPages = 3,
+		totalPages = 0,
+		className,
 	} = props;
 
-	const [_page, setPage] = useState<number>(page || 1);
+	const _page = page ?? 1;
 
 	const onChange = (page: number) => {
-		setPage(page);
 		onPageChange?.(page);
 	};
 
 	const onPrev = (page: number) => {
 		if (_page <= 1) return;
 
-		setPage((p) => p - 1);
 		onPageChange?.(page - 1);
 	};
 
 	const onNext = (page: number) => {
 		if (_page >= totalPages) return;
 
-		setPage((p) => p + 1);
 		onPageChange?.(page + 1);
 	};
 
@@ -53,26 +57,33 @@ const PaginationImpl: React.FC<PaginationProps> = (props) => {
 
 	return (
 		<PaginationRoot>
-			<PaginationRoot.Summary>{summary}</PaginationRoot.Summary>
+			<PaginationRoot.Summary className={cn(className?.summary)}>
+				{summary}
+			</PaginationRoot.Summary>
 			<PaginationRoot.Content>
 				<PaginationRoot.Item>
 					<PaginationRoot.Previous
+						className={className?.prev}
 						isDisabled={_page === 1}
 						onPress={() => onPrev(_page)}
 					>
 						<PaginationRoot.PreviousIcon />
-						<span>Previous</span>
+						<span className="hidden sm:block">Sau</span>
 					</PaginationRoot.Previous>
 				</PaginationRoot.Item>
-				{pageNumbers.map((p) =>
+				{pageNumbers.map((p, i) =>
 					p === "ellipsis" ? (
-						<PaginationRoot.Item key={`ellipsis-${p}`}>
+						<PaginationRoot.Item
+							className={className?.item}
+							key={`ellipsis-${p}-${i}`}
+						>
 							<PaginationRoot.Ellipsis />
 						</PaginationRoot.Item>
 					) : (
-						<PaginationRoot.Item key={p}>
+						<PaginationRoot.Item className={className?.item} key={p}>
 							<PaginationRoot.Link
 								isActive={p === _page}
+								isDisabled={p === _page}
 								onPress={() => onChange(p)}
 							>
 								{p}
@@ -82,10 +93,11 @@ const PaginationImpl: React.FC<PaginationProps> = (props) => {
 				)}
 				<PaginationRoot.Item>
 					<PaginationRoot.Next
+						className={className?.next}
 						isDisabled={_page === totalPages}
 						onPress={() => onNext(_page)}
 					>
-						<span>Next</span>
+						<span className="hidden sm:block">Trước</span>
 						<PaginationRoot.NextIcon />
 					</PaginationRoot.Next>
 				</PaginationRoot.Item>

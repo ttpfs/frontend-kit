@@ -18,6 +18,6 @@ const config: StorybookConfig = {
 		getAbsolutePath("@storybook/addon-docs"),
 	],
 	framework: getAbsolutePath("@storybook/react-vite"),
-	stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
+	stories: ["../src/__storybook__/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
 };
 export default config;
