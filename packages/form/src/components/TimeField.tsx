@@ -1,3 +1,4 @@
+import { type TimeFieldProps } from "@/types";
 import {
 	TimeField as BaseTimeField,
 	Description,
@@ -5,7 +6,6 @@ import {
 	Label,
 } from "@ttpfs/ui-react";
 import { Controller, type FieldValues } from "react-hook-form";
-import { type TimeFieldProps } from "@/types";
 
 export const TimeField = <T extends FieldValues>(props: TimeFieldProps<T>) => {
 	const {
@@ -23,24 +23,24 @@ export const TimeField = <T extends FieldValues>(props: TimeFieldProps<T>) => {
 
 	return (
 		<Controller
-			name={name}
 			control={control}
+			name={name}
 			render={({ field, fieldState: { invalid, error } }) => (
 				<BaseTimeField
-					fullWidth
-					isRequired={required}
+					aria-label={label ?? name}
 					className={className?.wrapper}
-					name={field.name}
-					value={field.value ?? null}
-					ref={field.ref}
-					onChange={field.onChange}
-					onBlur={field.onBlur}
+					fullWidth
 					isDisabled={field.disabled ?? disabled}
 					isInvalid={invalid}
 					isReadOnly={readonly}
+					isRequired={required}
 					maxValue={maxValue}
 					minValue={minValue}
-					aria-label={label ?? name}
+					name={field.name}
+					onBlur={field.onBlur}
+					onChange={field.onChange}
+					ref={field.ref}
+					value={field.value ?? null}
 				>
 					<Label className={className?.label}>{label}</Label>
 					<BaseTimeField.Group className={className?.group}>
@@ -48,7 +48,7 @@ export const TimeField = <T extends FieldValues>(props: TimeFieldProps<T>) => {
 							{(segment) => <BaseTimeField.Segment segment={segment} />}
 						</BaseTimeField.Input>
 					</BaseTimeField.Group>
-					{invalid ? (
+					{error ? (
 						<FieldError>{error?.message}</FieldError>
 					) : (
 						description && (

@@ -1,3 +1,4 @@
+import { type InputType, type TextFieldProps } from "@/types";
 import {
 	TextField as BaseTextField,
 	CloseButton,
@@ -9,7 +10,6 @@ import {
 } from "@ttpfs/ui-react";
 import type React from "react";
 import { Controller, type FieldValues } from "react-hook-form";
-import { type InputType, type TextFieldProps } from "@/types";
 
 const IconMapForType: Record<InputType, React.ReactNode | undefined> = {
 	email: <Icon name="mail" size="sm" />,
@@ -38,22 +38,22 @@ export const TextField = <TValues extends FieldValues>(
 
 	return (
 		<Controller
-			name={name}
 			control={control}
-			render={({ field, fieldState: { invalid, error } }) => (
+			name={name}
+			render={({ field, fieldState: { error } }) => (
 				<BaseTextField
-					onChange={field.onChange}
-					onBlur={field.onBlur}
-					ref={field.ref}
-					isInvalid={invalid}
-					isRequired={required}
-					isReadOnly={readonly}
-					fullWidth
-					name={field.name}
-					isDisabled={field.disabled ?? disabled}
-					className={className?.wrapper}
-					type={type}
 					aria-label={label ?? name}
+					className={className?.wrapper}
+					fullWidth
+					isDisabled={field.disabled ?? disabled}
+					isInvalid={!!error}
+					isReadOnly={readonly}
+					isRequired={required}
+					name={field.name}
+					onBlur={field.onBlur}
+					onChange={field.onChange}
+					ref={field.ref}
+					type={type}
 				>
 					<Label className={className?.label}>{label}</Label>
 					<InputGroup className={className?.group}>
@@ -61,20 +61,20 @@ export const TextField = <TValues extends FieldValues>(
 							<InputGroup.Prefix>{IconMapForType[type]}</InputGroup.Prefix>
 						)}
 						<InputGroup.Input
+							className={className?.input}
 							placeholder={placeholder}
 							value={field.value ?? ""}
-							className={className?.input}
 						/>
 						{field.value?.length > 0 && (
 							<InputGroup.Suffix>
 								<CloseButton
-									onClick={() => field.onChange("")}
 									className={"size-4"}
+									onClick={() => field.onChange("")}
 								/>
 							</InputGroup.Suffix>
 						)}
 					</InputGroup>
-					{invalid ? (
+					{error ? (
 						<FieldError>{error?.message}</FieldError>
 					) : (
 						description && (
