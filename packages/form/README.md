@@ -1,6 +1,6 @@
 # @ttpfs/form-react
 
-> Version: **0.2.3**
+> Version: **0.2.4**
 
 Thư viện form fields cho React, tích hợp [react-hook-form](https://react-hook-form.com) và [Zod](https://zod.dev) validation, xây dựng trên `@ttpfs/ui-react`.
 

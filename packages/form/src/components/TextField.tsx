@@ -67,10 +67,9 @@ export const TextField = <TValues extends FieldValues>(
 						/>
 						{field.value?.length > 0 && (
 							<InputGroup.Suffix>
-								<CloseButton
-									className={"size-4"}
-									onClick={() => field.onChange("")}
-								/>
+								<CloseButton onClick={() => field.onChange("")}>
+									<Icon name="close" size="sm" />
+								</CloseButton>
 							</InputGroup.Suffix>
 						)}
 					</InputGroup>
