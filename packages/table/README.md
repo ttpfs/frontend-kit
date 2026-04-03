@@ -1,6 +1,6 @@
 # @ttpfs/table-react
 
-> Version: **0.1.5**
+> Version: **0.1.6**
 
 Thư viện data table cho React, xây dựng trên [TanStack Table v8](https://tanstack.com/table) và `@ttpfs/ui-react`.
 

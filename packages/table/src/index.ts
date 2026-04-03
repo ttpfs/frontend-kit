@@ -16,7 +16,7 @@ export {
 	type PaginationState,
 	type RowSelectionState,
 	type SortingState,
-	type Table,
+	type Table as ReactTable,
 	useReactTable,
 } from "@tanstack/react-table";
 
