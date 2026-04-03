@@ -39,7 +39,7 @@ export const ThemeSwitcher: React.FC<ThemeSwitcherProps> = (props) => {
 						className?.lightIcon,
 						"text-neutral-500 dark:text-neutral-400",
 					)}
-					name="sun"
+					name="moon"
 				/>
 			) : (
 				<Icon
@@ -47,7 +47,7 @@ export const ThemeSwitcher: React.FC<ThemeSwitcherProps> = (props) => {
 						className?.darkIcon,
 						"text-neutral-500 dark:text-neutral-400",
 					)}
-					name="moon"
+					name="sun"
 				/>
 			)}
 		</Button>
