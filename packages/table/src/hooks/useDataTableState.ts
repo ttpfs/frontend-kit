@@ -5,7 +5,7 @@ import {
 } from "@tanstack/react-table";
 import { useLocalStorage } from "./useLocalStorage";
 
-export function useDataTable(tableId: string) {
+export function useDataTableState(tableId: string) {
 	const [_columnPinning, setColumnPinning] = useLocalStorage<
 		Record<string, ColumnPinningState>
 	>("data-table-column-pinning", {});

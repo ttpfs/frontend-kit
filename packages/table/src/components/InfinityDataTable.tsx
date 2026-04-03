@@ -11,9 +11,9 @@ import {
 } from "@tanstack/react-table";
 import { Checkbox, EmptyState, Icon, Spinner, Table } from "@ttpfs/ui-react";
 import { useMemo, useState } from "react";
+import { useDataTableState } from "@/hooks/useDataTableState";
 import { type InfinityDataTableProps } from "@/types";
 import { toSortDescriptor, toSortingState } from "@/utils";
-import { useDataTable } from "../hooks";
 import { SortableColumnHeader } from "./column";
 import { DataTableViewOptions } from "./DataTableViewOptions";
 
@@ -45,7 +45,7 @@ export const InfinityDataTable = <TData, TValue>(
 		columnVisibility,
 		columnPinning,
 		handleColumnPinningChange,
-	} = useDataTable(tableId);
+	} = useDataTableState(tableId);
 
 	const table = useReactTable({
 		columns,

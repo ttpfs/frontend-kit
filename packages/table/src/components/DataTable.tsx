@@ -20,9 +20,9 @@ import {
 	Table,
 } from "@ttpfs/ui-react";
 import { useMemo, useState } from "react";
+import { useDataTableState } from "@/hooks/useDataTableState";
 import { type DataTableProps } from "@/types";
 import { toSortDescriptor, toSortingState } from "@/utils";
-import { useDataTable } from "../hooks";
 import { SortableColumnHeader } from "./column";
 import { DataTableViewOptions } from "./DataTableViewOptions";
 
@@ -61,7 +61,7 @@ export const DataTable = <TData, TValue>(
 		columnVisibility,
 		columnPinning,
 		handleColumnPinningChange,
-	} = useDataTable(tableId);
+	} = useDataTableState(tableId);
 
 	const table = useReactTable({
 		columns,
