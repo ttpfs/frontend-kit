@@ -1,6 +1,6 @@
 # @ttpfs/ui-react
 
-> Version: **1.2.2**
+> Version: **1.2.3**
 
 Thư viện UI component cho React, xây dựng trên nền [HeroUI](https://heroui.com) và Tailwind CSS v4.
 

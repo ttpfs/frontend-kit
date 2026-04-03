@@ -6,17 +6,19 @@ import {
 	type TypedIconName,
 } from "./types";
 
-let registry: IconRegistry = { ...DEFAULT_ICON_REGISTRY };
+const registry: IconRegistry = { ...DEFAULT_ICON_REGISTRY };
 
 export const registerIcons = <
 	T extends Partial<Record<TypedIconName, IconDefinition>>,
 >(
 	icons: T,
 ) => {
-	registry = {
-		...registry,
-		...icons,
-	};
+	Object.entries(icons).forEach(([name, icon]) => {
+		registry[name as TypedIconName] = {
+			...registry[name as TypedIconName], // giữ default cũ
+			...icon, // override cái mới
+		};
+	});
 };
 
 export const getIconClass = (
