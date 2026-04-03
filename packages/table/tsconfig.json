@@ -4,17 +4,10 @@
 		"noEmit": false,
 		"outDir": "dist",
 		"paths": {
-			"@/*": [
-				"./src/*"
-			]
-		},
+			"@/*": ["./src/*"]
+		}
 	},
-	"exclude": [
-		"node_modules",
-		"dist"
-	],
+	"exclude": ["node_modules", "dist"],
 	"extends": "@packages/typescript-config/react-library.json",
-	"include": [
-		"src"
-	]
+	"include": ["src"]
 }

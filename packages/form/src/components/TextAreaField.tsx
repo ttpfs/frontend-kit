@@ -26,29 +26,29 @@ export const TextAreaField = <T extends FieldValues>(
 	} = props;
 	return (
 		<Controller
-			name={name}
 			control={control}
+			name={name}
 			render={({ field, fieldState: { invalid, error } }) => (
 				<TextField
-					onChange={field.onChange}
-					onBlur={field.onBlur}
-					ref={field.ref}
-					isInvalid={invalid}
-					isRequired={required}
-					isReadOnly={readonly}
-					fullWidth
-					name={field.name}
-					isDisabled={field.disabled ?? disabled}
-					className={className?.wrapper}
 					aria-label={label ?? name}
+					className={className?.wrapper}
+					fullWidth
+					isDisabled={field.disabled ?? disabled}
+					isInvalid={invalid}
+					isReadOnly={readonly}
+					isRequired={required}
+					name={field.name}
+					onBlur={field.onBlur}
+					onChange={field.onChange}
+					ref={field.ref}
 				>
 					<Label className={className?.label}>{label}</Label>
 					<TextArea
 						className={className?.input}
 						maxLength={maxLength}
 						placeholder={placeholder}
-						value={field.value}
 						rows={rows}
+						value={field.value}
 					/>
 					{invalid ? (
 						<FieldError>{error?.message}</FieldError>

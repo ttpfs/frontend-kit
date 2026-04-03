@@ -1,9 +1,9 @@
 {
-  "license": "MIT",
-  "name": "@packages/typescript-config",
-  "private": true,
-  "publishConfig": {
-    "access": "public"
-  },
-  "version": "0.0.0"
+	"license": "MIT",
+	"name": "@packages/typescript-config",
+	"private": true,
+	"publishConfig": {
+		"access": "public"
+	},
+	"version": "0.0.0"
 }

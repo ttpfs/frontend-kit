@@ -1,5 +1,5 @@
 export {
 	SidebarContext,
-	useSidebar,
 	type SidebarContextProps,
+	useSidebar,
 } from "./SidebarContext";

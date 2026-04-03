@@ -20,7 +20,7 @@ interface UseFormSubmitOptions<
 	TSuccess extends Record<string, any> = Record<string, any>,
 	TError extends Error = Error,
 > {
-	onValid: (values: TValues) => Promise<TSuccess>;
+	onValid: (values: TValues) => Promise<TSuccess> | TSuccess | Promise<void>;
 	onInvalid?: (
 		errors: FieldErrors<TValues>,
 		event?: React.BaseSyntheticEvent,

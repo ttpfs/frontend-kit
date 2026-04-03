@@ -16,7 +16,10 @@ export function useFormSubmit<
 		async (values) => {
 			try {
 				const result = await onValid(values);
-				onSuccess?.(result);
+				if (typeof result === "object") {
+					onSuccess?.(result);
+				}
+				onSuccess?.();
 			} catch (error) {
 				const baseError = error as TError;
 				onError?.(baseError);

@@ -45,10 +45,10 @@ const RadioGroupImpl: React.FC<RadioGroupProps> = (props) => {
 			{isItemsMode
 				? items.map((item) => (
 						<Radio
+							description={item.description}
+							key={item.value}
 							label={item.label}
 							value={item.value}
-							key={item.value}
-							description={item.description}
 						/>
 					))
 				: children}

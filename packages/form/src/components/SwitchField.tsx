@@ -15,17 +15,17 @@ export const SwitchField = <T extends FieldValues>(
 		props;
 	return (
 		<Controller
-			name={name}
 			control={control}
+			name={name}
 			render={({ field, fieldState: { invalid, error } }) => (
-				<TextField name={field.name} isInvalid={invalid}>
+				<TextField isInvalid={invalid} name={field.name}>
 					<Switch
+						aria-label={label ?? name}
 						isDisabled={field.disabled ?? disabled}
 						isReadOnly={readonly}
 						isSelected={field.value ?? false}
-						onChange={field.onChange}
 						onBlur={field.onBlur}
-						aria-label={label ?? name}
+						onChange={field.onChange}
 					>
 						{label && <Label className={className?.label}>{label}</Label>}
 						{invalid ? (

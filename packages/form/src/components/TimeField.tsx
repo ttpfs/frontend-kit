@@ -1,4 +1,3 @@
-import { type TimeFieldProps } from "@/types";
 import {
 	TimeField as BaseTimeField,
 	Description,
@@ -6,6 +5,7 @@ import {
 	Label,
 } from "@ttpfs/ui-react";
 import { Controller, type FieldValues } from "react-hook-form";
+import { type TimeFieldProps } from "@/types";
 
 export const TimeField = <T extends FieldValues>(props: TimeFieldProps<T>) => {
 	const {

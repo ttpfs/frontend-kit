@@ -1,11 +1,11 @@
-import { Drawer, type DrawerPlacement, Tooltip } from "@/components/overlay";
-import { Button, Icon, Input } from "@/components/primitives";
-import { useSidebar } from "@/context";
 import { Separator, Skeleton, type TooltipContent } from "@heroui/react";
 import { cn } from "@heroui/styles";
 import { cva, type VariantProps } from "class-variance-authority";
 import { Slot } from "radix-ui";
 import * as React from "react";
+import { Drawer, type DrawerPlacement, Tooltip } from "@/components/overlay";
+import { Button, Icon, Input } from "@/components/primitives";
+import { useSidebar } from "@/context";
 
 const SIDEBAR_WIDTH_MOBILE = "18rem";
 

@@ -3,7 +3,7 @@ import type React from "react";
 export interface NotificationConfig {
 	description?: string;
 	timeout?: number;
-	onClose(): void;
+	onClose?: () => void;
 	icon?: React.ReactNode;
 }
 

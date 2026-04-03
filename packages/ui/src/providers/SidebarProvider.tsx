@@ -1,7 +1,7 @@
-import { SidebarContext, type SidebarContextProps } from "@/context";
-import { useIsMobile } from "@/hooks";
 import { cn } from "@heroui/styles";
 import React from "react";
+import { SidebarContext, type SidebarContextProps } from "@/context";
+import { useIsMobile } from "@/hooks";
 
 interface Props extends React.ComponentProps<"div"> {
 	defaultOpen?: boolean;

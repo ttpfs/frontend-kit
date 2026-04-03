@@ -56,26 +56,26 @@ export const InputOTPField = <T extends FieldValues>(
 
 	return (
 		<Controller
-			name={name}
 			control={control}
+			name={name}
 			render={({ field, fieldState: { invalid, error } }) => (
 				<TextField
+					aria-label={label ?? name}
+					className={className?.wrapper}
+					fullWidth
+					isDisabled={field.disabled ?? disabled}
+					isInvalid={invalid}
+					isReadOnly={readonly}
+					isRequired={required}
+					name={field.name}
 					onBlur={field.onBlur}
 					ref={field.ref}
-					isInvalid={invalid}
-					isRequired={required}
-					isReadOnly={readonly}
-					fullWidth
-					name={field.name}
-					isDisabled={field.disabled ?? disabled}
-					className={className?.wrapper}
-					aria-label={label ?? name}
 				>
 					<Label className={className?.label}>{label}</Label>
 					<InputOTP
+						maxLength={digits}
 						onChange={field.onChange}
 						value={field.value}
-						maxLength={digits}
 					>
 						{renderGroup()}
 					</InputOTP>

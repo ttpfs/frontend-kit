@@ -1,24 +1,14 @@
 {
-  "compilerOptions": {
-    "baseUrl": ".",
-    "noEmit": false,
-    "outDir": "dist",
-    "paths": {
-      "@/*": [
-        "./src/*"
-      ]
-    }
-  },
-  "exclude": [
-    "node_modules",
-    "dist"
-  ],
-  "extends": "@packages/typescript-config/react-library.json",
-  "include": [
-    "src",
-    "vite.config.ts"
-  ],
-  "types": [
-    "vite/client"
-  ]
+	"compilerOptions": {
+		"baseUrl": ".",
+		"noEmit": false,
+		"outDir": "dist",
+		"paths": {
+			"@/*": ["./src/*"]
+		}
+	},
+	"exclude": ["node_modules", "dist"],
+	"extends": "@packages/typescript-config/react-library.json",
+	"include": ["src", "vite.config.ts"],
+	"types": ["vite/client"]
 }

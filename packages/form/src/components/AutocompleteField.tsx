@@ -59,10 +59,10 @@ export const AutocompleteField = <T extends FieldValues>(
 							);
 							return (
 								<TagGroup
-									size="sm"
 									onRemove={(keys) =>
 										value?.filter((key: Key) => !keys.has(key))
 									}
+									size="sm"
 								>
 									<TagGroup.List>
 										{selectedItemsKeys.map((selectedItemKey: Key) => {
@@ -71,7 +71,7 @@ export const AutocompleteField = <T extends FieldValues>(
 											);
 											if (!item) return null;
 											return (
-												<Tag key={item.id} id={item.id}>
+												<Tag id={item.id} key={item.id}>
 													{item.label}
 												</Tag>
 											);
@@ -118,17 +118,17 @@ export const AutocompleteField = <T extends FieldValues>(
 
 	return (
 		<Controller
-			name={name}
 			control={control}
+			name={name}
 			render={({ field, fieldState: { invalid, error } }) => (
 				<Autocomplete
 					isDisabled={field.disabled ?? disabled}
 					isInvalid={invalid}
 					isRequired={required}
+					onChange={field.onChange}
 					placeholder={placeholder}
 					selectionMode={mode}
 					value={field.value}
-					onChange={field.onChange}
 				>
 					<Label>{label}</Label>
 					<Autocomplete.Trigger>
@@ -142,10 +142,10 @@ export const AutocompleteField = <T extends FieldValues>(
 									<SearchField.SearchIcon />
 									<SearchField.Input placeholder="Search characters..." />
 									<Spinner
-										size="sm"
 										className={cn("absolute top-1/2 right-2 -translate-y-1/2", {
 											"pointer-events-none opacity-0": !isFetching,
 										})}
+										size="sm"
 									/>
 									<SearchField.ClearButton
 										className={cn({
@@ -162,8 +162,8 @@ export const AutocompleteField = <T extends FieldValues>(
 							>
 								{(option) => (
 									<ListBox.Item
-										key={option.id}
 										id={option.id}
+										key={option.id}
 										textValue={option.label}
 									>
 										{option.meta?.thumbnailUrl && (

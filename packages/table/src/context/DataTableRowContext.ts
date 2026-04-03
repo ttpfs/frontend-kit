@@ -15,7 +15,7 @@ export interface DataTableContextValue<
 }
 
 export const DataTableContext =
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	// biome-ignore lint/suspicious/noExplicitAny: <>
 	createContext<DataTableContextValue<any, any> | null>(null);
 
 export function useDataTableRow<

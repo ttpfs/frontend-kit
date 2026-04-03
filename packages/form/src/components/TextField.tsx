@@ -1,4 +1,3 @@
-import { type InputType, type TextFieldProps } from "@/types";
 import {
 	TextField as BaseTextField,
 	CloseButton,
@@ -10,6 +9,7 @@ import {
 } from "@ttpfs/ui-react";
 import type React from "react";
 import { Controller, type FieldValues } from "react-hook-form";
+import { type InputType, type TextFieldProps } from "@/types";
 
 const IconMapForType: Record<InputType, React.ReactNode | undefined> = {
 	email: <Icon name="mail" size="sm" />,

@@ -1,5 +1,3 @@
-import { Description } from "@/components/primitives";
-import { type CustomStyle } from "@/types";
 import {
 	Drawer as BaseDrawer,
 	type DrawerBodyProps as BaseDrawerBodyProps,
@@ -12,6 +10,8 @@ import {
 } from "@heroui/react";
 import type React from "react";
 import { type PropsWithChildren } from "react";
+import { Description } from "@/components/primitives";
+import { type CustomStyle } from "@/types";
 
 const DrawerRoot = BaseDrawer;
 type DrawerPlacement = "top" | "bottom" | "left" | "right";

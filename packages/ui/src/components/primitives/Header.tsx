@@ -1,1 +1,1 @@
-export {Header} from '@heroui/react'
+export { Header } from "@heroui/react";

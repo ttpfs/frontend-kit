@@ -61,8 +61,8 @@ export const InfinitySelectField = <T extends FieldValues>(
 									<Header>{item.label}</Header>
 									{item.options.map((option) => (
 										<ListBox.Item
-											key={option.id}
 											id={option.id}
+											key={option.id}
 											textValue={option.label}
 										>
 											{option.label}
@@ -85,21 +85,21 @@ export const InfinitySelectField = <T extends FieldValues>(
 
 	return (
 		<Controller
-			name={name}
 			control={control}
+			name={name}
 			render={({ field, fieldState: { invalid, error } }) => (
 				<Select
 					fullWidth
 					isDisabled={field.disabled ?? disabled}
 					isInvalid={invalid}
 					isRequired={required}
-					placeholder={placeholder}
-					value={field.value}
-					onChange={field.onChange}
-					onBlur={field.onBlur}
-					ref={field.ref}
 					name={field.name}
+					onBlur={field.onBlur}
+					onChange={field.onChange}
+					placeholder={placeholder}
+					ref={field.ref}
 					selectionMode={mode}
+					value={field.value}
 				>
 					<Label className={className?.label}>{label}</Label>
 					<Select.Trigger>

@@ -24,19 +24,19 @@ export const ColorField = <T extends FieldValues>(
 	} = props;
 	return (
 		<Controller
-			name={name}
 			control={control}
+			name={name}
 			render={({ field, fieldState: { invalid, error } }) => (
 				<BaseColorField
+					className={className?.wrapper}
 					fullWidth
 					isDisabled={field.disabled ?? disabled}
 					isInvalid={invalid}
 					isReadOnly={readonly}
 					isRequired={required}
-					className={className?.wrapper}
-					onChange={field.onChange}
-					onBlur={field.onBlur}
 					name={field.name}
+					onBlur={field.onBlur}
+					onChange={field.onChange}
 					value={field.value}
 				>
 					<Label className={className?.label}>{label}</Label>

@@ -1,5 +1,3 @@
-import { Description } from "@/components/primitives";
-import { type CustomStyle } from "@/types";
 import {
 	Modal as BaseModal,
 	type ModalBodyProps as BaseModalBodyProps,
@@ -13,6 +11,8 @@ import {
 } from "@heroui/react";
 import type React from "react";
 import { type PropsWithChildren } from "react";
+import { Description } from "@/components/primitives";
+import { type CustomStyle } from "@/types";
 
 const ModalRoot = BaseModal;
 type ModalPlacement = "auto" | "top" | "center" | "bottom";

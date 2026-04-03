@@ -28,27 +28,27 @@ export const SliderField = <T extends FieldValues>(
 	} = props;
 	return (
 		<Controller
-			name={name}
 			control={control}
+			name={name}
 			render={({ field, fieldState: { invalid, error } }) => (
 				<TextField
+					aria-label={label ?? name}
+					fullWidth
 					isInvalid={invalid}
 					isRequired={required}
-					fullWidth
-					aria-label={label ?? name}
 				>
 					<Slider
 						className={cn(className?.wrapper, "w-full max-w-xs")}
-						step={step}
-						value={field.value ?? 0}
-						onChange={field.onChange}
 						formatOptions={format}
-						maxValue={maxValue}
-						minValue={minValue}
-						orientation={orientation}
-						mode={mode}
 						isDisabled={field.disabled ?? disabled}
 						label={label}
+						maxValue={maxValue}
+						minValue={minValue}
+						mode={mode}
+						onChange={field.onChange}
+						orientation={orientation}
+						step={step}
+						value={field.value ?? 0}
 					/>
 					{invalid ? (
 						<FieldError>{error?.message}</FieldError>

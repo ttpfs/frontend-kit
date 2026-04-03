@@ -1,4 +1,3 @@
-import { type CustomStyle } from "@/types";
 import {
 	type AlertDialogBackdropProps,
 	type AlertDialogBodyProps,
@@ -13,6 +12,7 @@ import {
 } from "@heroui/react";
 import type React from "react";
 import { type PropsWithChildren } from "react";
+import { type CustomStyle } from "@/types";
 
 const AlertDialogRoot = BaseAlertDialog;
 type AlertDialogPlacement = "auto" | "top" | "center" | "bottom";

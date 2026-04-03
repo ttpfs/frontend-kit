@@ -1,1 +1,1 @@
-export {Tag} from '@heroui/react'
+export { Tag } from "@heroui/react";

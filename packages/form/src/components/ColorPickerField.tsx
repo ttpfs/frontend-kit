@@ -43,8 +43,8 @@ export const ColorPickerField = <T extends FieldValues>(
 
 	return (
 		<Controller
-			name={name}
 			control={control}
+			name={name}
 			render={({ field, fieldState: { error, invalid } }) => {
 				const shuffleColor = () => {
 					const randomHue = Math.floor(Math.random() * 360);
@@ -59,29 +59,29 @@ export const ColorPickerField = <T extends FieldValues>(
 				};
 				return (
 					<div className="flex w-full flex-col">
-						<ColorPicker value={field.value} onChange={field.onChange}>
+						<ColorPicker onChange={field.onChange} value={field.value}>
 							<ColorPicker.Trigger className={"w-full"}>
 								<ColorSwatch size="lg" />
 								<Label className={className?.label}>
 									{label}
 									{required && (
-										<Icon name="asterisk" className="text-danger ml-1.5" />
+										<Icon className="text-danger ml-1.5" name="asterisk" />
 									)}
 								</Label>
 							</ColorPicker.Trigger>
 							<ColorPicker.Popover className="gap-2">
 								<ColorSwatchPicker className="justify-center pt-2" size="xs">
 									{colorPresets.map((preset) => (
-										<ColorSwatchPicker.Item key={preset} color={preset}>
+										<ColorSwatchPicker.Item color={preset} key={preset}>
 											<ColorSwatchPicker.Swatch />
 										</ColorSwatchPicker.Item>
 									))}
 								</ColorSwatchPicker>
 								<ColorArea
-									isDisabled={field.disabled ?? disabled}
 									aria-label="Color area"
 									className="max-w-full"
 									colorSpace="hsb"
+									isDisabled={field.disabled ?? disabled}
 									xChannel="saturation"
 									yChannel="brightness"
 								>
@@ -99,11 +99,11 @@ export const ColorPickerField = <T extends FieldValues>(
 										</ColorSlider.Track>
 									</ColorSlider>
 									<Button
-										isIconOnly
 										aria-label="Shuffle color"
+										isIconOnly
+										onPress={shuffleColor}
 										size="sm"
 										variant="tertiary"
-										onPress={shuffleColor}
 									>
 										<Icon className="size-4" name="shuffle" />
 									</Button>

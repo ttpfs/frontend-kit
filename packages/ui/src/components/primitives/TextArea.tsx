@@ -44,14 +44,14 @@ const TextArea: React.FC<TextAreaProps> = (props) => {
 		<div className="flex w-full flex-col gap-2">
 			<BaseTextArea
 				{...rest}
-				rows={rows}
-				variant={variant}
-				fullWidth={fullWidth}
 				disabled={isDisabled}
-				readOnly={isReadonly}
-				placeholder={placeholder}
-				value={value}
+				fullWidth={fullWidth}
 				onChange={(event) => handleChange(event.target.value)}
+				placeholder={placeholder}
+				readOnly={isReadonly}
+				rows={rows}
+				value={value}
+				variant={variant}
 			/>
 			<Description id={`${id}-description`}>
 				{countLabel} {_value.length} / {maxLength}

@@ -25,22 +25,23 @@ export const CheckboxField = <T extends FieldValues>(
 
 	return (
 		<Controller
+			control={control}
 			name={name}
 			render={({ field, fieldState: { invalid, error } }) => (
-				<TextField name={field.name} isInvalid={invalid}>
+				<TextField isInvalid={invalid} name={field.name}>
 					<Checkbox
+						aria-label={label ?? name}
 						isDisabled={field.disabled ?? disabled}
 						isReadOnly={readonly}
 						isSelected={field.value ?? false}
-						onChange={field.onChange}
 						onBlur={field.onBlur}
-						aria-label={label ?? name}
+						onChange={field.onChange}
 					>
 						{label && (
 							<Label className={className?.label}>
 								{label}
 								{required && (
-									<Icon name="asterisk" className="text-danger ml-1.5" />
+									<Icon className="text-danger ml-1.5" name="asterisk" />
 								)}
 							</Label>
 						)}
@@ -56,7 +57,6 @@ export const CheckboxField = <T extends FieldValues>(
 					</Checkbox>
 				</TextField>
 			)}
-			control={control}
 		/>
 	);
 };

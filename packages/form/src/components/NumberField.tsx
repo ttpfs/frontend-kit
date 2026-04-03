@@ -28,25 +28,25 @@ export const NumberField = <T extends FieldValues>(
 	} = props;
 	return (
 		<Controller
-			name={name}
 			control={control}
+			name={name}
 			render={({ field, fieldState: { invalid, error } }) => (
 				<BaseNumberField
+					className={className?.wrapper}
+					formatOptions={format}
 					fullWidth
+					isDisabled={field.disabled ?? disabled}
 					isInvalid={invalid}
 					isReadOnly={readonly}
 					isRequired={required}
-					formatOptions={format}
 					maxValue={maxValue}
 					minValue={minValue}
 					name={field.name}
-					ref={field.ref}
 					onBlur={field.onBlur}
-					isDisabled={field.disabled ?? disabled}
+					onChange={field.onChange}
+					ref={field.ref}
 					step={step}
 					value={field.value ?? 0}
-					onChange={field.onChange}
-					className={className?.wrapper}
 				>
 					<Label className={className?.label}>{label}</Label>
 					<BaseNumberField.Group className={className?.group}>

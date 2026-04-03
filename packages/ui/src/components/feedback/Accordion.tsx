@@ -1,5 +1,3 @@
-import { Icon } from "@/components/primitives";
-import { type CustomStyle } from "@/types";
 import {
 	type AccordionBodyProps,
 	type AccordionHeadingProps,
@@ -9,6 +7,8 @@ import {
 	Accordion as BaseAccordion,
 } from "@heroui/react";
 import type React from "react";
+import { Icon } from "@/components/primitives";
+import { type CustomStyle } from "@/types";
 
 const AccordionRoot = BaseAccordion;
 
