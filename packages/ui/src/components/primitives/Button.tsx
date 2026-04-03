@@ -38,7 +38,7 @@ const Button: React.FC<ButtonProps> = (props) => {
 
 	return (
 		<HerouiButton
-			className={cn(className, "h-9")}
+			className={cn(className)}
 			isIconOnly={isIconOnly || !children}
 			isPending={loading}
 			onPress={onPress}
