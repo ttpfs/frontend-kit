@@ -8,16 +8,16 @@ export class Notification implements INotification {
 	clear(): void {
 		toast.clear();
 	}
-	success(message: string, config?: NotificationConfig): string {
+	success(message?: string, config?: NotificationConfig): string {
 		return toast.success(message, config);
 	}
-	error(message: string, config?: NotificationConfig): string {
+	error(message?: string, config?: NotificationConfig): string {
 		return toast.danger(message, config);
 	}
-	info(message: string, config?: NotificationConfig): string {
+	info(message?: string, config?: NotificationConfig): string {
 		return toast.info(message, config);
 	}
-	warning(message: string, config?: NotificationConfig): string {
+	warning(message?: string, config?: NotificationConfig): string {
 		return toast.warning(message, config);
 	}
 }
