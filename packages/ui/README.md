@@ -1,6 +1,6 @@
 # @ttpfs/ui-react
 
-> Version: **1.2.9**
+> Version: **1.3.0**
 
 Thư viện UI component cho React, xây dựng trên nền [HeroUI](https://heroui.com) và Tailwind CSS v4.
 
@@ -22,8 +22,6 @@ Các package sau cần được cài đặt trong project của bạn:
 | `@tailwindcss/postcss` | `^4` |
 | `@iconify/tailwind4` | `^1.2.1` |
 | `@iconify-json/lucide` | `^1.2.86` |
-| `@iconify-json/solar` | `^1.2.5` |
-| `@iconify-json/fluent-color` | `^1.2.21` |
 | `@iconify-json/logos` | `^1.2.10` |
 | `@iconify-json/svg-spinners` | `^1.2.4` |
 
