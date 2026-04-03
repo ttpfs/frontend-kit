@@ -1,9 +1,10 @@
 import { cn } from "@heroui/styles";
 import { useTheme } from "next-themes";
 import type React from "react";
+import { useEffect, useState } from "react";
 import { Button, type ButtonProps, Icon } from "../primitives";
 
-interface ThemeSwitcherProps extends Omit<ButtonProps, "className"> {
+export interface ThemeSwitcherProps extends Omit<ButtonProps, "className"> {
 	className?: {
 		darkIcon?: string;
 		lightIcon?: string;
@@ -11,12 +12,19 @@ interface ThemeSwitcherProps extends Omit<ButtonProps, "className"> {
 	};
 }
 
+const getInitialIsDark = () => {
+	if (typeof document === "undefined") return false;
+	return document.documentElement.classList.contains("dark");
+};
+
 export const ThemeSwitcher: React.FC<ThemeSwitcherProps> = (props) => {
 	const { className, variant = "outline", ...rest } = props;
+	const { resolvedTheme, setTheme } = useTheme();
+	const [isDark, setIsDark] = useState(getInitialIsDark);
 
-	const { theme, setTheme } = useTheme();
-
-	const isDark = theme === "dark";
+	useEffect(() => {
+		setIsDark(resolvedTheme === "dark");
+	}, [resolvedTheme]);
 
 	const onTheme = () => {
 		setTheme(isDark ? "light" : "dark");
@@ -26,7 +34,7 @@ export const ThemeSwitcher: React.FC<ThemeSwitcherProps> = (props) => {
 		<Button
 			className={cn(
 				className?.root,
-				"h-10 w-10 rounded-lg font-medium whitespace-nowrap",
+				"rounded-lg font-medium whitespace-nowrap",
 			)}
 			isIconOnly
 			onPress={onTheme}

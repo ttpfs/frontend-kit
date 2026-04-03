@@ -17,14 +17,12 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = (props) => {
 	const {
 		children,
 		attribute = "class",
-		defaultTheme = "light",
 		enableSystem = true,
 		disableTransitionOnChange = false,
 	} = props;
 	return (
 		<NextThemeProvider
 			attribute={attribute}
-			defaultTheme={defaultTheme}
 			disableTransitionOnChange={disableTransitionOnChange}
 			enableSystem={enableSystem}
 		>
