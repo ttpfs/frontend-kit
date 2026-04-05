@@ -13,9 +13,15 @@
 		"react-medium-image-zoom": "5.4.0",
 		"tw-animate-css": "1.4.0"
 	},
-	"description": "",
+	"description": "A UI component library built on top of HeroUI, providing simplified and ergonomic APIs over complex compound components. It standardizes common patterns (Drawer, Modal, AlertDialog, Popover) and includes a theme system powered by next-themes using class-based switching. The library also introduces a type-safe icon system with registry support via Iconify.",
 	"devDependencies": {
+		"@iconify-json/logos": "^1.2.10",
+		"@iconify-json/lucide": "^1.2.86",
+		"@iconify-json/svg-spinners": "^1.2.4",
+		"@iconify/tailwind4": "^1.2.1",
 		"@packages/typescript-config": "workspace:*",
+		"@tailwindcss/cli": "^4.2.2",
+		"@tailwindcss/postcss": "^4.2.2",
 		"@types/react": "^19",
 		"@types/react-dom": "^19",
 		"tsup": "^8.5.1",
@@ -42,11 +48,6 @@
 	"main": "./dist/index.js",
 	"name": "@ttpfs/ui-react",
 	"peerDependencies": {
-		"@iconify-json/logos": "^1.2.10",
-		"@iconify-json/lucide": "^1.2.86",
-		"@iconify-json/svg-spinners": "^1.2.4",
-		"@iconify/tailwind4": "^1.2.1",
-		"@tailwindcss/postcss": "^4",
 		"react": "^19",
 		"react-dom": "^19",
 		"tailwindcss": "^4"
@@ -59,12 +60,13 @@
 		"url": "https://github.com/ttpfs/frontend-kit.git"
 	},
 	"scripts": {
-		"build": "tsup && cp src/global.css dist/global.css"
+		"build": "tsup && pnpm exec tailwindcss -i ./src/global.css -o ./dist/global.css"
 	},
 	"sideEffects": [
 		"*.css"
 	],
+	"style": "./dist/global.css",
 	"type": "module",
 	"types": "./dist/index.d.ts",
-	"version": "1.3.0"
+	"version": "1.4.0"
 }

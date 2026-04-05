@@ -159,7 +159,6 @@ export const DEFAULT_ICON_REGISTRY: Record<TypedIconName, IconDefinition> = {
 		outline: "icon-[lucide--globe]",
 	},
 	heart: {
-		bold: "icon-[solar--heart-bold]",
 		outline: "icon-[lucide--heart]",
 	},
 	history: {

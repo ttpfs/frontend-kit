@@ -1,13 +1,13 @@
 {
 	"compilerOptions": {
 		"baseUrl": ".",
+		"ignoreDeprecations": "6.0",
 		"noEmit": false,
-		"outDir": "dist",
 		"paths": {
 			"@/*": ["./src/*"]
 		}
 	},
-	"exclude": ["node_modules", "dist"],
+	"exclude": ["node_modules"],
 	"extends": "@packages/typescript-config/react-library.json",
 	"include": ["src", "vite.config.ts"],
 	"types": ["vite/client"]

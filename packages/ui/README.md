@@ -1,6 +1,6 @@
 # @ttpfs/ui-react
 
-> Version: **1.3.0**
+> Version: **1.4.0**
 
 Thư viện UI component cho React, xây dựng trên nền [HeroUI](https://heroui.com) và Tailwind CSS v4.
 
@@ -19,11 +19,6 @@ Các package sau cần được cài đặt trong project của bạn:
 | `react` | `^19` |
 | `react-dom` | `^19` |
 | `tailwindcss` | `^4` |
-| `@tailwindcss/postcss` | `^4` |
-| `@iconify/tailwind4` | `^1.2.1` |
-| `@iconify-json/lucide` | `^1.2.86` |
-| `@iconify-json/logos` | `^1.2.10` |
-| `@iconify-json/svg-spinners` | `^1.2.4` |
 
 ## Setup
 
@@ -114,4 +109,32 @@ import { notification } from "@ttpfs/ui-react";
 
 notification.success("Lưu thành công");
 notification.error("Có lỗi xảy ra");
+```
+
+## Icon Registry
+
+Flexible using icons through registerIcons for type-safe
+
+```ts
+declare module "@ttpfs/ui-react" {
+	interface IconRegistry {
+		github: IconDefinition;
+		facebook: IconDefinition;
+		code: IconDefinition;
+	}
+}
+
+registerIcons({
+	code: {
+		outline: "icon-[lucide--code-xml]",
+	},
+	facebook: {
+		color: "icon-[logos--facebook]",
+	},
+	github: {
+		outline: "icon-[lucide--github]",
+	},
+});
+
+
 ```

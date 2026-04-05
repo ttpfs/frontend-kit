@@ -1,11 +1,11 @@
 {
 	"compilerOptions": {
-		"baseUrl": ".",
 		"noEmit": false,
 		"outDir": "dist",
 		"paths": {
 			"@/*": ["./src/*"]
-		}
+		},
+		"rootDir": "src"
 	},
 	"exclude": ["node_modules", "dist"],
 	"extends": "@packages/typescript-config/react-library.json",

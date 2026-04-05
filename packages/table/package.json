@@ -7,7 +7,7 @@
 		"@tanstack/react-table": "^8.21.3",
 		"@ttpfs/ui-react": "workspace:*"
 	},
-	"description": "",
+	"description": "A React Table component built by composing TanStack Table with HeroUI, delivering a flexible, headless data model with a polished UI layer. It focuses on extensibility via mixin-style composition while keeping state management explicit and predictable.",
 	"devDependencies": {
 		"@packages/typescript-config": "workspace:*",
 		"@types/react": "^19",
@@ -48,5 +48,5 @@
 	},
 	"type": "module",
 	"types": "./dist/index.d.ts",
-	"version": "0.1.6"
+	"version": "0.2.0"
 }
