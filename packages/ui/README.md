@@ -19,6 +19,10 @@ Các package sau cần được cài đặt trong project của bạn:
 | `react` | `^19` |
 | `react-dom` | `^19` |
 | `tailwindcss` | `^4` |
+| `@iconify/tailwind4` | `^1.2.1` |
+| `@iconify-json/lucide` | `^1.2.86` |
+| `@iconify-json/logos` | `^1.2.10` |
+| `@iconify-json/svg-spinners` | `^1.2.4` |
 
 ## Setup
 
