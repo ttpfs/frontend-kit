@@ -20,8 +20,6 @@
 		"@iconify-json/svg-spinners": "^1.2.4",
 		"@iconify/tailwind4": "^1.2.1",
 		"@packages/typescript-config": "workspace:*",
-		"@tailwindcss/cli": "^4.2.2",
-		"@tailwindcss/postcss": "^4.2.2",
 		"@types/react": "^19",
 		"@types/react-dom": "^19",
 		"tsup": "^8.5.1",
@@ -33,7 +31,7 @@
 			"types": "./dist/index.d.ts"
 		},
 		"./*": null,
-		"./global.css": "./dist/global.css"
+		"./styles.css": "./dist/styles.css"
 	},
 	"files": [
 		"dist"
@@ -60,7 +58,7 @@
 		"url": "https://github.com/ttpfs/frontend-kit.git"
 	},
 	"scripts": {
-		"build": "tsup && pnpm exec tailwindcss -i ./src/global.css -o ./dist/global.css"
+		"build": "tsup && cp src/styles.css dist/styles.css"
 	},
 	"sideEffects": [
 		"*.css"
@@ -68,5 +66,5 @@
 	"style": "./dist/global.css",
 	"type": "module",
 	"types": "./dist/index.d.ts",
-	"version": "1.4.0"
+	"version": "1.4.2"
 }

@@ -20,7 +20,8 @@
 			"import": "./dist/index.js",
 			"types": "./dist/index.d.ts"
 		},
-		"./*": null
+		"./*": null,
+		"./styles.css": "./dist/styles.css"
 	},
 	"files": [
 		"dist"
@@ -34,7 +35,8 @@
 	"name": "@ttpfs/table-react",
 	"peerDependencies": {
 		"react": "^19",
-		"react-dom": "^19"
+		"react-dom": "^19",
+		"tailwindcss": "^4"
 	},
 	"publishConfig": {
 		"registry": "https://npm.pkg.github.com"
@@ -44,9 +46,9 @@
 		"url": "https://github.com/ttpfs/frontend-kit.git"
 	},
 	"scripts": {
-		"build": "tsup"
+		"build": "tsup && cp src/styles.css dist/styles.css"
 	},
 	"type": "module",
 	"types": "./dist/index.d.ts",
-	"version": "0.2.0"
+	"version": "0.2.2"
 }

@@ -1,4 +1,6 @@
+import { type TextAreaFieldProps } from "@/types";
 import {
+	cn,
 	Description,
 	FieldError,
 	Label,
@@ -6,7 +8,6 @@ import {
 	TextField,
 } from "@ttpfs/ui-react";
 import { Controller, type FieldValues } from "react-hook-form";
-import { type TextAreaFieldProps } from "@/types";
 
 export const TextAreaField = <T extends FieldValues>(
 	props: TextAreaFieldProps<T>,
@@ -44,7 +45,7 @@ export const TextAreaField = <T extends FieldValues>(
 				>
 					<Label className={className?.label}>{label}</Label>
 					<TextArea
-						className={className?.input}
+						className={cn(className?.input, "text-sm placeholder:text-sm")}
 						maxLength={maxLength}
 						placeholder={placeholder}
 						rows={rows}
