@@ -21,7 +21,7 @@
 	"exports": {
 		".": {
 			"import": "./dist/index.js",
-			"types": "./dist/index.d.ts"
+			"require": "./dist/index.cjs"
 		},
 		"./*": null,
 		"./styles.css": "./dist/styles.css"
@@ -36,7 +36,8 @@
 		"field"
 	],
 	"license": "MIT",
-	"main": "./dist/index.js",
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.js",
 	"name": "@ttpfs/form-react",
 	"peerDependencies": {
 		"react": "^19",
@@ -51,10 +52,11 @@
 		"url": "https://github.com/ttpfs/frontend-kit.git"
 	},
 	"scripts": {
-		"build": "tsup && cp src/styles.css dist/styles.css"
+		"build": "tsup && cp src/styles.css dist/styles.css",
+		"dev": "tsup --watch --no-clean --no-treeshake"
 	},
 	"sideEffects": true,
 	"type": "module",
 	"types": "./dist/index.d.ts",
-	"version": "0.3.4"
+	"version": "0.3.5"
 }

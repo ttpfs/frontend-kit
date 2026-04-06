@@ -34,7 +34,7 @@
 	"name": "storybook",
 	"private": true,
 	"scripts": {
-		"dev": "vite",
+		"dev": "storybook dev -p 6006",
 		"preview": "vite preview",
 		"storybook": "storybook dev -p 6006"
 	},

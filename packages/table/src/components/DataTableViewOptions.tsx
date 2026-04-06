@@ -9,9 +9,13 @@ export function DataTableViewOptions<TData>({
 	return (
 		<Popover>
 			<Popover.Trigger>
-				<Button className="text-neutral-700" size="sm" variant="secondary">
-					<Icon className="text-neutral-700" name="eye" />
-					<span className="max-sm:hidden">Hiển thị</span>
+				<Button
+					className="text-neutral-700 dark:text-neutral-300"
+					size="sm"
+					variant="secondary"
+				>
+					<Icon className="text-neutral-700 dark:text-neutral-300" name="eye" />
+					<span className="max-sm:hidden ">Hiển thị</span>
 				</Button>
 			</Popover.Trigger>
 			<Popover.Content className="p-3!" heading="Cột">

@@ -1,7 +1,11 @@
 {
 	"compilerOptions": {
 		"composite": false,
-		"noEmit": true
+		"noEmit": true,
+		"paths": {
+			"@/*": ["./src/*"]
+		},
+		"rootDir": "."
 	},
 	"exclude": ["node_modules"],
 	"extends": "@packages/typescript-config/react-library.json",

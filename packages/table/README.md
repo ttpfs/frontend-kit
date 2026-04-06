@@ -1,10 +1,10 @@
 # @ttpfs/table-react
 
-> Version: **0.2.3**
+> Version: **0.2.4**
 
-Thư viện data table cho React, xây dựng trên [TanStack Table v8](https://tanstack.com/table) và `@ttpfs/ui-react`.
+A React data table library built on top of TanStack Table v8 and `@ttpfs/ui-react`.
 
-## Cài đặt
+## Installation
 
 ```bash
 pnpm add @ttpfs/table-react
@@ -12,18 +12,18 @@ pnpm add @ttpfs/table-react
 
 ## Peer Dependencies
 
-| Package | Version |
-|---|---|
-| `react` | `^19` |
-| `react-dom` | `^19` |
+| Package     | Version |
+| ----------- | ------- |
+| `react`     | `^19`   |
+| `react-dom` | `^19`   |
 
 ## Dependencies
 
-Package này yêu cầu `@ttpfs/ui-react` được cài đặt (tự động kéo theo khi cài package này).
+This package requires `@ttpfs/ui-react` (installed automatically as a dependency).
 
 ## Setup
 
-Adding @ttpfs/table-react/styles.css below style library ui to apply custom style from library table
+Import the table styles after the UI library styles to ensure proper overrides:
 
 ```css
 @import "@ttpfs/ui-react/styles.css";
@@ -31,39 +31,43 @@ Adding @ttpfs/table-react/styles.css below style library ui to apply custom styl
 ```
 
 ```tsx
-import { DataTable, useDataTable } from "@ttpfs/table-react";
+import { DataTable, useDataTable, createColumnHelper } from "@ttpfs/table-react";
 
+const columnHelper = createColumnHelper<User>();
 const columns = [
-  { accessorKey: "name", header: "Tên" },
-  { accessorKey: "email", header: "Email" },
+	columnHelper.accessor("name", { header: "Name", meta: { label: "Tên" } }),
+	columnHelper.accessor("role", { header: "Role", meta: { label: "Vai trò" } }),
+	columnHelper.accessor("status", {
+		cell: (info) => (
+			<Chip color={statusColorMap[info.getValue()]} size="sm" variant="soft">
+				{info.getValue()}
+			</Chip>
+		),
+		header: "Status",
+		meta: { label: "Trạng thái" },
+	}),
+	columnHelper.accessor("email", { header: "Email", meta: { label: "Email" } }),
 ];
 
 export function MyTable({ data }) {
-
   return <DataTable data={data} columns={columns} />;
 }
 ```
 
 ## Components
 
-| Component | Mô tả |
-|---|---|
-| `DataTable` | Bảng dữ liệu đầy đủ tính năng |
-| `InfinityDataTable` | Bảng với infinite scroll |
-| `DataTableViewOptions` | Dropdown ẩn/hiện cột |
-| `SortableColumnHeader` | Header cột hỗ trợ sắp xếp |
+| Component              | Description                       |
+| ---------------------- | --------------------------------- |
+| `DataTable`            | Fully-featured data table         |
+| `InfinityDataTable`    | Table with infinite scrolling     |
+| `DataTableViewOptions` | Column visibility toggle dropdown |
+| `SortableColumnHeader` | Sortable column header            |
 
-## Hooks
+## Features
 
-| Hook | Mô tả |
-|---|---|
-| `useDataTable` | Khởi tạo và quản lý state của table |
-
-## Tính năng
-
-- Sắp xếp theo cột (sorting)
-- Ẩn/hiện cột (column visibility)
-- Phân trang (pagination)
-- Infinite scroll
-- Lưu trạng thái cột vào localStorage
-- Row context thông qua `DataTableRowContext`
+* Column sorting
+* Column visibility control
+* Pagination
+* Infinite scrolling
+* Column state persistence via `localStorage`
+* Row-level context via `DataTableRowContext`

@@ -1,10 +1,10 @@
 # @ttpfs/ui-react
 
-> Version: **1.4.4**
+> Version: **1.4.5**
 
-Thư viện UI component cho React, xây dựng trên nền [HeroUI](https://heroui.com) và Tailwind CSS v4.
+A React UI component library built on top of HeroUI and Tailwind CSS v4.
 
-## Cài đặt
+## Installation
 
 ```bash
 pnpm add @ttpfs/ui-react
@@ -12,27 +12,27 @@ pnpm add @ttpfs/ui-react
 
 ## Peer Dependencies
 
-Các package sau cần được cài đặt trong project của bạn:
+The following packages must be installed in your project:
 
-| Package | Version |
-|---|---|
-| `react` | `^19` |
-| `react-dom` | `^19` |
-| `tailwindcss` | `^4` |
-| `@iconify/tailwind4` | `^1.2.1` |
-| `@iconify-json/lucide` | `^1.2.86` |
-| `@iconify-json/logos` | `^1.2.10` |
-| `@iconify-json/svg-spinners` | `^1.2.4` |
+| Package                      | Version   |
+| ---------------------------- | --------- |
+| `react`                      | `^19`     |
+| `react-dom`                  | `^19`     |
+| `tailwindcss`                | `^4`      |
+| `@iconify/tailwind4`         | `^1.2.1`  |
+| `@iconify-json/lucide`       | `^1.2.86` |
+| `@iconify-json/logos`        | `^1.2.10` |
+| `@iconify-json/svg-spinners` | `^1.2.4`  |
 
 ## Setup
 
-Import global CSS vào entry point của app:
+Import the global CSS at your app entry point:
 
 ```ts
 import "@ttpfs/ui-react/global.css";
 ```
 
-Wrap app với `ThemeProvider`:
+Wrap your application with `ThemeProvider` to using Dark theme mode next-themes-based:
 
 ```tsx
 import { ThemeProvider } from "@ttpfs/ui-react";
@@ -49,75 +49,84 @@ export default function App() {
 ## Components
 
 ### Primitives
-- `Button`, `CloseButton`, `ToggleButton`, `ToggleButtonGroup`, `Toolbar`
-- `Checkbox`, `CheckboxGroup`, `Radio`, `RadioGroup`
-- `Input`, `InputGroup`, `InputOTP`, `TextArea`
-- `Switch`, `SwitchGroup`
-- `Label`, `Description`, `Header`
-- `Spinner`, `Kbd`, `Snippet`, `Link`
+
+* `Button`, `CloseButton`, `ToggleButton`, `ToggleButtonGroup`, `Toolbar`
+* `Checkbox`, `CheckboxGroup`, `Radio`, `RadioGroup`
+* `Input`, `InputGroup`, `InputOTP`, `TextArea`
+* `Switch`, `SwitchGroup`
+* `Label`, `Description`, `Header`
+* `Spinner`, `Kbd`, `Snippet`, `Link`, `Snippet`, `Icon`
 
 ### Composite Fields
-- `TextField`, `NumberField`, `ColorField`, `SearchField`
-- `DateField`, `TimeField`
+
+* `TextField`, `NumberField`, `ColorField`, `SearchField`
+* `DateField`, `TimeField`, `Fieldset`, `ThemeSwitcher`
 
 ### Inputs
-- `Select`, `Autocomplete`
-- `DatePicker`, `DateRangePicker`, `Calendar`, `RangeCalendar`
-- `ColorPicker`, `ColorSlider`
-- `Slider`
+
+* `Select`, `Autocomplete`
+* `DatePicker`, `DateRangePicker`, `Calendar`, `RangeCalendar`
+* `ColorPicker`, `ColorSlider`
+* `Slider`
 
 ### Data Display
-- `Avatar`, `Badge`, `Chip`, `Tag`, `TagGroup`
-- `Table`, `Listbox`
-- `ProgressBar`, `ProgressCircle`
-- `ColorArea`, `ColorSwatch`, `ColorSwatchPicker`
-- `ValueDisplay`, `FieldError`
+
+* `Avatar`, `Badge`, `Chip`, `Tag`, `TagGroup`
+* `Table`, `Listbox`
+* `ProgressBar`, `ProgressCircle`
+* `ColorArea`, `ColorSwatch`, `ColorSwatchPicker`
+* `ValueDisplay`, `FieldError`
 
 ### Layout
-- `Card`, `Flex`, `Grid`
-- `Collapsible`, `ScrollShadow`, `Separator`, `Surface`
+
+* `Card`, `Flex`, `Grid`
+* `Collapsible`, `ScrollShadow`, `Separator`, `Surface`
 
 ### Navigation
-- `Sidebar`, `Tabs`, `Breadcrumbs`, `Pagination`
+
+* `Sidebar`, `Tabs`, `Breadcrumbs`, `Pagination`
 
 ### Overlay
-- `Modal`, `Drawer`, `AlertDialog`
-- `Dropdown`, `Popover`, `Tooltip`
+
+* `Modal`, `Drawer`, `AlertDialog`
+* `Dropdown`, `Popover`, `Tooltip`
 
 ### Feedback
-- `Alert`, `Accordion`, `Skeleton`
-- `Empty`, `ErrorMessage`
+
+* `Alert`, `Accordion`, `Skeleton`
+* `Empty`, `ErrorMessage`
 
 ### Media
-- `ImageZoom`
+
+* `ImageZoom`
 
 ## Providers
 
-| Provider | Mô tả |
-|---|---|
-| `ThemeProvider` | Quản lý dark/light theme |
-| `NotificationProvider` | Hiển thị toast/notification |
-| `SidebarProvider` | Quản lý trạng thái sidebar |
+| Provider               | Description                        |
+| ---------------------- | ---------------------------------- |
+| `ThemeProvider`        | Manages light/dark theme           |
+| `NotificationProvider` | Handles toast/notification display |
+| `SidebarProvider`      | Manages sidebar state              |
 
 ## Hooks
 
-| Hook | Mô tả |
-|---|---|
-| `useTheme` | Đọc và thay đổi theme hiện tại |
-| `useMobile` | Detect màn hình mobile |
+| Hook        | Description                         |
+| ----------- | ----------------------------------- |
+| `useTheme`  | Access and update the current theme |
+| `useMobile` | Detect mobile viewport              |
 
 ## Notification
 
 ```ts
 import { notification } from "@ttpfs/ui-react";
 
-notification.success("Lưu thành công");
-notification.error("Có lỗi xảy ra");
+notification.success("Saved successfully");
+notification.error("An error occurred");
 ```
 
 ## Icon Registry
 
-Flexible using icons through registerIcons for type-safe
+Flexible, type-safe icon usage via `registerIcons`:
 
 ```ts
 declare module "@ttpfs/ui-react" {
@@ -139,6 +148,4 @@ registerIcons({
 		outline: "icon-[lucide--github]",
 	},
 });
-
-
 ```

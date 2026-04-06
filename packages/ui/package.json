@@ -24,7 +24,7 @@
 	"exports": {
 		".": {
 			"import": "./dist/index.js",
-			"types": "./dist/index.d.ts"
+			"require": "./dist/index.cjs"
 		},
 		"./*": null,
 		"./styles.css": "./dist/styles.css"
@@ -39,7 +39,8 @@
 		"heroui"
 	],
 	"license": "MIT",
-	"main": "./dist/index.js",
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.js",
 	"name": "@ttpfs/ui-react",
 	"peerDependencies": {
 		"@iconify-json/logos": "^1.2.10",
@@ -58,12 +59,13 @@
 		"url": "https://github.com/ttpfs/frontend-kit.git"
 	},
 	"scripts": {
-		"build": "tsup && cp src/styles.css dist/styles.css"
+		"build": "tsup && cp src/styles.css dist/styles.css",
+		"dev": "tsup --watch --no-clean --no-treeshake"
 	},
 	"sideEffects": [
 		"*.css"
 	],
 	"type": "module",
 	"types": "./dist/index.d.ts",
-	"version": "1.4.4"
+	"version": "1.4.5"
 }
