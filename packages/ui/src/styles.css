@@ -4,3 +4,6 @@
 @plugin "@iconify/tailwind4";
 
 @source "./**/*.{ts,tsx,js,jsx}";
+
+@source "../../../packages/form/**/*.{ts,tsx}";
+@source "../../../packages/table/**/*.{ts,tsx}";

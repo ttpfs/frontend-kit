@@ -303,6 +303,9 @@ export const DEFAULT_ICON_REGISTRY: Record<TypedIconName, IconDefinition> = {
 	"sliders-vertical": {
 		outline: "icon-[lucide--sliders-vertical]",
 	},
+	sparkles: {
+		outline: "icon-[lucide--sparkles]",
+	},
 	"spinner-dots": {
 		outline: "icon-[svg-spinners--3-dots-bounce]",
 	},

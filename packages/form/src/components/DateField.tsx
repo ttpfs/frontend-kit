@@ -1,3 +1,5 @@
+import { type DateFieldProps } from "@/types";
+import { formatCalendarToISO } from "@/utils";
 import { getLocalTimeZone, parseDate, today } from "@internationalized/date";
 import {
 	Description,
@@ -7,8 +9,6 @@ import {
 	Label,
 } from "@ttpfs/ui-react";
 import { Controller, type FieldValues } from "react-hook-form";
-import { type DateFieldProps } from "@/types";
-import { formatCalendarToISO } from "@/utils";
 
 export const DateField = <T extends FieldValues>(props: DateFieldProps<T>) => {
 	const {
@@ -49,6 +49,7 @@ export const DateField = <T extends FieldValues>(props: DateFieldProps<T>) => {
 					}
 					ref={field.ref}
 					shouldForceLeadingZeros
+					validationBehavior="aria"
 					value={field.value ? parseDate(field.value) : null}
 				>
 					<Label className={className?.label}>{label}</Label>

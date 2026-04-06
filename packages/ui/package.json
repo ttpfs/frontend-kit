@@ -15,10 +15,6 @@
 	},
 	"description": "A UI component library built on top of HeroUI, providing simplified and ergonomic APIs over complex compound components. It standardizes common patterns (Drawer, Modal, AlertDialog, Popover) and includes a theme system powered by next-themes using class-based switching. The library also introduces a type-safe icon system with registry support via Iconify.",
 	"devDependencies": {
-		"@iconify-json/logos": "^1.2.10",
-		"@iconify-json/lucide": "^1.2.86",
-		"@iconify-json/svg-spinners": "^1.2.4",
-		"@iconify/tailwind4": "^1.2.1",
 		"@packages/typescript-config": "workspace:*",
 		"@types/react": "^19",
 		"@types/react-dom": "^19",
@@ -46,6 +42,10 @@
 	"main": "./dist/index.js",
 	"name": "@ttpfs/ui-react",
 	"peerDependencies": {
+		"@iconify-json/logos": "^1.2.10",
+		"@iconify-json/lucide": "^1.2.86",
+		"@iconify-json/svg-spinners": "^1.2.4",
+		"@iconify/tailwind4": "^1.2.1",
 		"react": "^19",
 		"react-dom": "^19",
 		"tailwindcss": "^4"
@@ -66,5 +66,5 @@
 	"style": "./dist/global.css",
 	"type": "module",
 	"types": "./dist/index.d.ts",
-	"version": "1.4.2"
+	"version": "1.4.3"
 }

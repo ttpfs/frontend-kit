@@ -1,3 +1,4 @@
+import { type NumberFieldProps } from "@/types";
 import {
 	NumberField as BaseNumberField,
 	Description,
@@ -5,7 +6,6 @@ import {
 	Label,
 } from "@ttpfs/ui-react";
 import { Controller, type FieldValues } from "react-hook-form";
-import { type NumberFieldProps } from "@/types";
 
 export const NumberField = <T extends FieldValues>(
 	props: NumberFieldProps<T>,
@@ -46,6 +46,7 @@ export const NumberField = <T extends FieldValues>(
 					onChange={field.onChange}
 					ref={field.ref}
 					step={step}
+					validationBehavior="aria"
 					value={field.value ?? 0}
 				>
 					<Label className={className?.label}>{label}</Label>

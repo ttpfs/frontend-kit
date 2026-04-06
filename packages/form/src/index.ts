@@ -1,6 +1,6 @@
 export {
-	type ArrayPath,
 	Controller,
+	type ArrayPath,
 	type FieldPath,
 	type FieldValues,
 	type Path,
@@ -11,3 +11,4 @@ export * from "./hooks";
 export * from "./providers";
 export * from "./registry";
 export * from "./types";
+export * from "./utils";

@@ -120,6 +120,7 @@ export interface IconRegistry {
 	"user-group": IconDefinition;
 	video: IconDefinition;
 	"zoom-in": IconDefinition;
+	sparkles: IconDefinition;
 	"zoom-out": IconDefinition;
 }
 export type TypedIconName = keyof IconRegistry;

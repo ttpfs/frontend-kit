@@ -14,6 +14,7 @@ import {
 	type RadioGroupFieldProps,
 	type SelectFieldProps,
 	type SliderFieldProps,
+	type SlugFieldProps,
 	type SwitchFieldProps,
 	type TextAreaFieldProps,
 	type TextFieldProps,
@@ -71,6 +72,9 @@ interface FieldTypeMap {
 	) => JSX.Element;
 	DateRangePicker: <TValues extends FieldValues>(
 		props: DateRangePickerFieldProps<TValues>,
+	) => JSX.Element;
+	SlugField: <TValues extends FieldValues>(
+		props: SlugFieldProps<TValues>,
 	) => JSX.Element;
 }
 

@@ -12,6 +12,7 @@ export { NumberField } from "./NumberField";
 export { RadioGroupField } from "./RadioGroupField";
 export { SelectField } from "./SelectField";
 export { SliderField } from "./SliderField";
+export { SlugField } from "./SlugField";
 export { SwitchField } from "./SwitchField";
 export { TextAreaField } from "./TextAreaField";
 export { TextField } from "./TextField";

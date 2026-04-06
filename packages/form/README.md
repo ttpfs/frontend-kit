@@ -1,6 +1,6 @@
 # @ttpfs/form-react
 
-> Version: **0.3.2**
+> Version: **0.3.3**
 
 Thư viện form fields cho React, tích hợp [react-hook-form](https://react-hook-form.com) và [Zod](https://zod.dev) validation, xây dựng trên `@ttpfs/ui-react`.
 
@@ -67,6 +67,7 @@ export function MyForm() {
 | `ColorPickerField` | Color picker |
 | `SliderField` | Thanh trượt |
 | `InputOTPField` | Input OTP |
+| `SlugField` | Amazing Slug generate from single any Source Field |
 | `FormSubmitButton` | Nút submit tích hợp loading state |
 
 ## Hooks

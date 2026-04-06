@@ -1,3 +1,5 @@
+import { type DatePickerFieldProps } from "@/types";
+import { formatCalendarToISO } from "@/utils";
 import { getLocalTimeZone, parseDate, today } from "@internationalized/date";
 import {
 	Calendar,
@@ -11,8 +13,6 @@ import {
 	type TimeValue,
 } from "@ttpfs/ui-react";
 import { Controller, type FieldValues } from "react-hook-form";
-import { type DatePickerFieldProps } from "@/types";
-import { formatCalendarToISO } from "@/utils";
 
 export const DatePickerField = <T extends FieldValues>(
 	props: DatePickerFieldProps<T>,
@@ -55,6 +55,7 @@ export const DatePickerField = <T extends FieldValues>(
 						field.onChange(formatCalendarToISO(value, granularity))
 					}
 					shouldForceLeadingZeros
+					validationBehavior="aria"
 					value={field.value ? parseDate(field.value) : null}
 				>
 					{({ state }) => (

@@ -6,8 +6,8 @@ Monorepo chứa các thư viện UI component cho React, được publish lên G
 
 | Package | Version | Mô tả |
 |---|---|---|
-| [`@ttpfs/ui-react`](./packages/ui) | `1.4.2` | Thư viện UI component cơ bản (HeroUI + Tailwind CSS v4) |
-| [`@ttpfs/form-react`](./packages/form) | `0.3.2` | Form fields tích hợp react-hook-form và Zod |
+| [`@ttpfs/ui-react`](./packages/ui) | `1.4.3` | Thư viện UI component cơ bản (HeroUI + Tailwind CSS v4) |
+| [`@ttpfs/form-react`](./packages/form) | `0.3.3` | Form fields tích hợp react-hook-form và Zod |
 | [`@ttpfs/table-react`](./packages/table) | `0.2.2` | Data table xây dựng trên TanStack Table v8 |
 
 ## Yêu cầu

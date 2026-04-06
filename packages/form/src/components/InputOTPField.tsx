@@ -1,3 +1,4 @@
+import { type InputOTPFieldProps } from "@/types";
 import {
 	Description,
 	FieldError,
@@ -6,7 +7,6 @@ import {
 	TextField,
 } from "@ttpfs/ui-react";
 import { Controller, type FieldValues } from "react-hook-form";
-import { type InputOTPFieldProps } from "@/types";
 
 export const InputOTPField = <T extends FieldValues>(
 	props: InputOTPFieldProps<T>,
@@ -70,6 +70,7 @@ export const InputOTPField = <T extends FieldValues>(
 					name={field.name}
 					onBlur={field.onBlur}
 					ref={field.ref}
+					validationBehavior="aria"
 				>
 					<Label className={className?.label}>{label}</Label>
 					<InputOTP

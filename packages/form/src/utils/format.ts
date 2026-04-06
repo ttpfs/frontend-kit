@@ -1,6 +1,6 @@
-import { type CalendarDate } from "@internationalized/date";
 import { type Granularity } from "@/types";
-
+import { type CalendarDate } from "@internationalized/date";
+import slugifyFormat from "slugify";
 export const formatCalendarToISO = (
 	value: CalendarDate | null,
 	granularity: Granularity,
@@ -22,3 +22,30 @@ export const formatCalendarToISO = (
 
 	return format();
 };
+
+export interface SlugifyOptions {
+	replacement?: string;
+	remove?: RegExp;
+	lower?: boolean;
+	strict?: boolean;
+	locale?: string;
+	trim?: boolean;
+}
+
+export function toSlug(value: string, options?: SlugifyOptions): string {
+	const DEFAULT_OPTIONS = {
+		locale: "vi",
+		lower: true,
+		replacement: "-",
+		strict: true,
+		trim: true,
+	} satisfies SlugifyOptions;
+
+	const opts = options ? { ...DEFAULT_OPTIONS, ...options } : DEFAULT_OPTIONS;
+
+	if (!value) return "";
+
+	const slug = slugifyFormat(value, opts);
+
+	return slug;
+}

@@ -41,13 +41,13 @@ export const TextField = <TValues extends FieldValues>(
 		<Controller
 			control={control}
 			name={name}
-			render={({ field, fieldState: { error } }) => (
+			render={({ field, fieldState: { error, invalid } }) => (
 				<BaseTextField
 					aria-label={label ?? name}
 					className={className?.wrapper}
 					fullWidth
 					isDisabled={field.disabled ?? disabled}
-					isInvalid={!!error}
+					isInvalid={invalid}
 					isReadOnly={readonly}
 					isRequired={required}
 					name={field.name}
@@ -55,6 +55,7 @@ export const TextField = <TValues extends FieldValues>(
 					onChange={field.onChange}
 					ref={field.ref}
 					type={type}
+					validationBehavior="aria"
 				>
 					<Label className={className?.label}>{label}</Label>
 					<InputGroup className={className?.group}>

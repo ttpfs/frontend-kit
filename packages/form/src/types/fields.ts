@@ -1,4 +1,5 @@
 import { type TimeValue } from "@ttpfs/ui-react";
+import type React from "react";
 import { type Control, type FieldValues, type Path } from "react-hook-form";
 import { type Granularity, type InputType } from "./core";
 
@@ -224,6 +225,7 @@ export interface SwitchFieldProps<
 	> {
 	label?: string;
 }
+
 export interface RadioGroupFieldProps<
 	TValues extends FieldValues,
 	TName extends Path<TValues> = Path<TValues>,
@@ -249,4 +251,17 @@ export interface SliderFieldProps<
 		description?: string;
 		wrapper?: string;
 	};
+}
+
+export interface SlugFieldProps<
+	TValues extends FieldValues,
+	TName extends Path<TValues> = Path<TValues>,
+> extends FormFieldProps<TValues, TName> {
+	className?: FormFieldProps<TValues, TName>["className"] & {
+		input?: string;
+		wrapper?: string;
+		group?: string;
+	};
+	iconGenerate?: React.ReactNode;
+	sourceField?: TName; // data from field using to generate slug, default 'name'
 }

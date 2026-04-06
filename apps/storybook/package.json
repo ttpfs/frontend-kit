@@ -1,11 +1,17 @@
 {
 	"dependencies": {
+		"@ttpfs/form-react": "workspace:*",
 		"@ttpfs/table-react": "workspace:*",
 		"@ttpfs/ui-react": "workspace:*",
 		"react": "^19.2.4",
 		"react-dom": "^19.2.4"
 	},
 	"devDependencies": {
+		"@chromatic-com/storybook": "^5.1.1",
+		"@iconify-json/logos": "^1.2.10",
+		"@iconify-json/lucide": "^1.2.86",
+		"@iconify-json/svg-spinners": "^1.2.4",
+		"@iconify/tailwind4": "^1.2.3",
 		"@packages/typescript-config": "workspace:*",
 		"@storybook/addon-a11y": "^10.3.3",
 		"@storybook/addon-docs": "^10.3.3",
@@ -22,7 +28,8 @@
 		"tailwindcss": "^4.2.2",
 		"typescript": "5.9.2",
 		"vite": "^8.0.1",
-		"vitest": "^4.1.2"
+		"vitest": "^4.1.2",
+		"zod": "^4.3.6"
 	},
 	"name": "storybook",
 	"private": true,

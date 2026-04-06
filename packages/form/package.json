@@ -6,7 +6,8 @@
 	"dependencies": {
 		"@hookform/resolvers": "^5.2.2",
 		"@ttpfs/ui-react": "workspace:*",
-		"react-hook-form": "7.72.0"
+		"react-hook-form": "7.72.0",
+		"slugify": "^1.6.9"
 	},
 	"description": "A React form library built on top of react-hook-form and Zod, integrated with @ttpfs/ui-react and styled via HeroUI. It provides a composable, type-safe form system with prebuilt field components and a registry-based extension mechanism for custom fields.",
 	"devDependencies": {
@@ -54,5 +55,5 @@
 	},
 	"type": "module",
 	"types": "./dist/index.d.ts",
-	"version": "0.3.2"
+	"version": "0.3.3"
 }

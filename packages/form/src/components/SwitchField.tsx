@@ -1,4 +1,6 @@
+import { type SwitchFieldProps } from "@/types";
 import {
+	cn,
 	Description,
 	FieldError,
 	Label,
@@ -6,7 +8,6 @@ import {
 	TextField,
 } from "@ttpfs/ui-react";
 import { Controller, type FieldValues } from "react-hook-form";
-import { type SwitchFieldProps } from "@/types";
 
 export const SwitchField = <T extends FieldValues>(
 	props: SwitchFieldProps<T>,
@@ -32,7 +33,7 @@ export const SwitchField = <T extends FieldValues>(
 							<FieldError>{error?.message}</FieldError>
 						) : (
 							description && (
-								<Description className={className?.description}>
+								<Description className={cn(className?.description, "px-0")}>
 									{description}
 								</Description>
 							)

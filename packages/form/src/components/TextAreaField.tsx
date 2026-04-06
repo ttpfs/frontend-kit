@@ -42,6 +42,7 @@ export const TextAreaField = <T extends FieldValues>(
 					onBlur={field.onBlur}
 					onChange={field.onChange}
 					ref={field.ref}
+					validationBehavior="aria"
 				>
 					<Label className={className?.label}>{label}</Label>
 					<TextArea

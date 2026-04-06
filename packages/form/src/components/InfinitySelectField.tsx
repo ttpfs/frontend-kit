@@ -1,3 +1,4 @@
+import { type InfinitySelectFieldProps } from "@/types/fields";
 import {
 	Collection,
 	Description,
@@ -10,7 +11,6 @@ import {
 	Spinner,
 } from "@ttpfs/ui-react";
 import { Controller, type FieldValues } from "react-hook-form";
-import { type InfinitySelectFieldProps } from "@/types/fields";
 
 export const InfinitySelectField = <T extends FieldValues>(
 	props: InfinitySelectFieldProps<T>,
@@ -33,25 +33,6 @@ export const InfinitySelectField = <T extends FieldValues>(
 
 	const renderListItem = () => {
 		switch (variant) {
-			case "default":
-				return (
-					<ListBox>
-						<Collection items={props.options}>
-							{(option) => (
-								<ListBox.Item id={option.id} textValue={option.label}>
-									{option.label}
-									<ListBox.ItemIndicator />
-								</ListBox.Item>
-							)}
-						</Collection>
-						<ListBoxLoadMoreItem isLoading={isFetching} onLoadMore={onLoadMore}>
-							<div className="py-2">
-								<Spinner size="sm" />
-								<span className="text-sm text-muted">{loadMoreLabel}</span>
-							</div>
-						</ListBoxLoadMoreItem>
-					</ListBox>
-				);
 			case "section":
 				return (
 					<ListBox>
@@ -70,6 +51,25 @@ export const InfinitySelectField = <T extends FieldValues>(
 										</ListBox.Item>
 									))}
 								</ListBox.Section>
+							)}
+						</Collection>
+						<ListBoxLoadMoreItem isLoading={isFetching} onLoadMore={onLoadMore}>
+							<div className="py-2">
+								<Spinner size="sm" />
+								<span className="text-sm text-muted">{loadMoreLabel}</span>
+							</div>
+						</ListBoxLoadMoreItem>
+					</ListBox>
+				);
+			default:
+				return (
+					<ListBox>
+						<Collection items={props.options}>
+							{(option) => (
+								<ListBox.Item id={option.id} textValue={option.label}>
+									{option.label}
+									<ListBox.ItemIndicator />
+								</ListBox.Item>
 							)}
 						</Collection>
 						<ListBoxLoadMoreItem isLoading={isFetching} onLoadMore={onLoadMore}>

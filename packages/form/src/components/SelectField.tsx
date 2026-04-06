@@ -1,3 +1,4 @@
+import { type SelectFieldProps } from "@/types";
 import {
 	Description,
 	FieldError,
@@ -7,7 +8,6 @@ import {
 	Select,
 } from "@ttpfs/ui-react";
 import { Controller, type FieldValues } from "react-hook-form";
-import { type SelectFieldProps } from "@/types";
 
 export const SelectField = <T extends FieldValues>(
 	props: SelectFieldProps<T>,
@@ -27,24 +27,9 @@ export const SelectField = <T extends FieldValues>(
 
 	const renderListItem = () => {
 		switch (variant) {
-			case "default":
-				return (
-					<ListBox>
-						{props.options.map((option) => (
-							<ListBox.Item
-								id={option.id}
-								key={option.id}
-								textValue={option.label}
-							>
-								{option.label}
-								<ListBox.ItemIndicator />
-							</ListBox.Item>
-						))}
-					</ListBox>
-				);
 			case "section":
 				return (
-					<ListBox>
+					<ListBox selectionMode={mode}>
 						{props.options.map((item) => (
 							<ListBox.Section key={item.label}>
 								<Header>{item.label}</Header>
@@ -59,6 +44,21 @@ export const SelectField = <T extends FieldValues>(
 									</ListBox.Item>
 								))}
 							</ListBox.Section>
+						))}
+					</ListBox>
+				);
+			default:
+				return (
+					<ListBox selectionMode={mode}>
+						{props.options.map((option) => (
+							<ListBox.Item
+								id={option.id}
+								key={option.id}
+								textValue={option.label}
+							>
+								{option.label}
+								<ListBox.ItemIndicator />
+							</ListBox.Item>
 						))}
 					</ListBox>
 				);
@@ -77,10 +77,11 @@ export const SelectField = <T extends FieldValues>(
 					isRequired={required}
 					name={field.name}
 					onBlur={field.onBlur}
-					onChange={field.onChange}
+					onChange={(value) => field.onChange(value)}
 					placeholder={placeholder}
 					ref={field.ref}
 					selectionMode={mode}
+					validationBehavior="aria"
 					value={field.value}
 				>
 					<Label className={className?.label}>{label}</Label>

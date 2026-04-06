@@ -1,3 +1,4 @@
+import { type AutocompleteFieldProps } from "@/types";
 import {
 	Autocomplete,
 	Avatar,
@@ -15,7 +16,6 @@ import {
 } from "@ttpfs/ui-react";
 import { useState } from "react";
 import { Controller, type FieldValues } from "react-hook-form";
-import { type AutocompleteFieldProps } from "@/types";
 
 export const AutocompleteField = <T extends FieldValues>(
 	props: AutocompleteFieldProps<T>,
@@ -31,7 +31,7 @@ export const AutocompleteField = <T extends FieldValues>(
 		placeholder,
 		options,
 		onSearch: onSearchProp,
-		mode,
+		mode = "single",
 		required,
 	} = props;
 
@@ -128,6 +128,7 @@ export const AutocompleteField = <T extends FieldValues>(
 					onChange={field.onChange}
 					placeholder={placeholder}
 					selectionMode={mode}
+					validationBehavior="aria"
 					value={field.value}
 				>
 					<Label>{label}</Label>

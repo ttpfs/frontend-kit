@@ -1,5 +1,7 @@
+import { type CheckboxFieldProps } from "@/types";
 import {
 	Checkbox,
+	cn,
 	Description,
 	FieldError,
 	Icon,
@@ -7,7 +9,6 @@ import {
 	TextField,
 } from "@ttpfs/ui-react";
 import { Controller, type FieldValues } from "react-hook-form";
-import { type CheckboxFieldProps } from "@/types";
 
 export const CheckboxField = <T extends FieldValues>(
 	props: CheckboxFieldProps<T>,
@@ -49,7 +50,7 @@ export const CheckboxField = <T extends FieldValues>(
 							<FieldError>{error?.message}</FieldError>
 						) : (
 							description && (
-								<Description className={className?.description}>
+								<Description className={cn(className?.description, "px-0")}>
 									{description}
 								</Description>
 							)

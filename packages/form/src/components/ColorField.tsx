@@ -1,3 +1,4 @@
+import { type ColorFieldProps } from "@/types";
 import {
 	ColorField as BaseColorField,
 	ColorSwatch,
@@ -6,7 +7,6 @@ import {
 	Label,
 } from "@ttpfs/ui-react";
 import { Controller, type FieldValues } from "react-hook-form";
-import { type ColorFieldProps } from "@/types";
 
 export const ColorField = <T extends FieldValues>(
 	props: ColorFieldProps<T>,
@@ -37,6 +37,7 @@ export const ColorField = <T extends FieldValues>(
 					name={field.name}
 					onBlur={field.onBlur}
 					onChange={field.onChange}
+					validationBehavior="aria"
 					value={field.value}
 				>
 					<Label className={className?.label}>{label}</Label>

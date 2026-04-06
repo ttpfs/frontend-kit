@@ -1,1 +1,1 @@
-export { formatCalendarToISO } from "./format";
+export { formatCalendarToISO, toSlug, type SlugifyOptions } from "./format";

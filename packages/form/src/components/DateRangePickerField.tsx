@@ -1,3 +1,4 @@
+import { type DateRangePickerFieldProps } from "@/types";
 import { getLocalTimeZone, today } from "@internationalized/date";
 import {
 	DateField,
@@ -8,7 +9,6 @@ import {
 	RangeCalendar,
 } from "@ttpfs/ui-react";
 import { Controller, type FieldValues } from "react-hook-form";
-import { type DateRangePickerFieldProps } from "@/types";
 
 export const DateRangePickerField = <T extends FieldValues>(
 	props: DateRangePickerFieldProps<T>,
@@ -42,6 +42,7 @@ export const DateRangePickerField = <T extends FieldValues>(
 					minValue={minDay ? todayDate : undefined}
 					onChange={field.onChange}
 					startName="startDate"
+					validationBehavior="aria"
 					value={field.value ?? null}
 				>
 					<Label className={className?.label}>{label}</Label>

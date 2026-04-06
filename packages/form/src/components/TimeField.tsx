@@ -1,3 +1,4 @@
+import { type TimeFieldProps } from "@/types";
 import {
 	TimeField as BaseTimeField,
 	Description,
@@ -5,7 +6,6 @@ import {
 	Label,
 } from "@ttpfs/ui-react";
 import { Controller, type FieldValues } from "react-hook-form";
-import { type TimeFieldProps } from "@/types";
 
 export const TimeField = <T extends FieldValues>(props: TimeFieldProps<T>) => {
 	const {
@@ -40,6 +40,7 @@ export const TimeField = <T extends FieldValues>(props: TimeFieldProps<T>) => {
 					onBlur={field.onBlur}
 					onChange={field.onChange}
 					ref={field.ref}
+					validationBehavior="aria"
 					value={field.value ?? null}
 				>
 					<Label className={className?.label}>{label}</Label>
