@@ -1,3 +1,4 @@
+import { generateUsers, type User } from "@/mock/user";
 import { type Meta, type StoryObj } from "@storybook/react-vite";
 import {
 	createColumnHelper,
@@ -7,7 +8,6 @@ import {
 } from "@ttpfs/table-react";
 import { Chip, type Selection } from "@ttpfs/ui-react";
 import { useState } from "react";
-import { generateUsers, type User } from "@/mock/user";
 
 const meta = {
 	component: DataTable,
@@ -21,7 +21,6 @@ const meta = {
 
 			const [sorting, setSorting] = useState<SortingState>([]);
 
-			console.log(selectedKeys);
 			return (
 				<Story
 					{...context}

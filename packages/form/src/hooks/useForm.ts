@@ -1,3 +1,9 @@
+import { fieldRegistry } from "@/registry";
+import {
+	type BoundFields,
+	type UseFormProps,
+	type UseFormReturn,
+} from "@/types";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRef } from "react";
 import {
@@ -6,12 +12,6 @@ import {
 	useForm as useRhfForm,
 } from "react-hook-form";
 import { type ZodType, type z } from "zod";
-import { fieldRegistry } from "@/registry";
-import {
-	type BoundFields,
-	type UseFormProps,
-	type UseFormReturn,
-} from "@/types";
 
 export const useForm = <TSchema extends ZodType<FieldValues, FieldValues>>(
 	props: UseFormProps<TSchema>,

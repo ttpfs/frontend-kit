@@ -1,6 +1,6 @@
+import { type RadioGroupFieldProps } from "@/types";
 import { FieldError, RadioGroup } from "@ttpfs/ui-react";
 import { Controller, type FieldValues } from "react-hook-form";
-import { type RadioGroupFieldProps } from "@/types";
 
 export const RadioGroupField = <T extends FieldValues>(
 	props: RadioGroupFieldProps<T>,
@@ -24,7 +24,7 @@ export const RadioGroupField = <T extends FieldValues>(
 				<div className="flex flex-col gap-2">
 					<RadioGroup
 						description={description}
-						isDisabled={field.disabled ?? disabled}
+						isDisabled={disabled ?? field.disabled}
 						isInvalid={invalid}
 						isReadOnly={readonly}
 						isRequired={required}

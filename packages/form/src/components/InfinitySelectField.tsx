@@ -1,4 +1,4 @@
-import { type InfinitySelectFieldProps } from "@/types/fields";
+import { type InfinitySelectFieldProps } from "@/types";
 import {
 	Collection,
 	Description,
@@ -90,7 +90,7 @@ export const InfinitySelectField = <T extends FieldValues>(
 			render={({ field, fieldState: { invalid, error } }) => (
 				<Select
 					fullWidth
-					isDisabled={field.disabled ?? disabled}
+					isDisabled={disabled ?? field.disabled}
 					isInvalid={invalid}
 					isRequired={required}
 					name={field.name}

@@ -32,7 +32,7 @@ export const CheckboxField = <T extends FieldValues>(
 				<TextField isInvalid={invalid} name={field.name}>
 					<Checkbox
 						aria-label={label ?? name}
-						isDisabled={field.disabled ?? disabled}
+								isDisabled={disabled ?? field.disabled}
 						isReadOnly={readonly}
 						isSelected={field.value ?? false}
 						onBlur={field.onBlur}

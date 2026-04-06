@@ -46,14 +46,13 @@ export const TextField = <TValues extends FieldValues>(
 					aria-label={label ?? name}
 					className={className?.wrapper}
 					fullWidth
-					isDisabled={field.disabled ?? disabled}
+					isDisabled={disabled ?? field.disabled}
 					isInvalid={invalid}
 					isReadOnly={readonly}
 					isRequired={required}
 					name={field.name}
 					onBlur={field.onBlur}
 					onChange={field.onChange}
-					ref={field.ref}
 					type={type}
 					validationBehavior="aria"
 				>

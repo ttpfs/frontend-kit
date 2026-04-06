@@ -1,6 +1,6 @@
 # @ttpfs/form-react
 
-> Version: **0.3.3**
+> Version: **0.3.4**
 
 Thư viện form fields cho React, tích hợp [react-hook-form](https://react-hook-form.com) và [Zod](https://zod.dev) validation, xây dựng trên `@ttpfs/ui-react`.
 
@@ -23,6 +23,14 @@ pnpm add @ttpfs/form-react
 Package này yêu cầu `@ttpfs/ui-react` được cài đặt (tự động kéo theo khi cài package này).
 
 ## Setup
+
+Adding @ttpfs/form-react/styles.css below style library ui to apply custom style from library form
+
+```css
+@import "@ttpfs/ui-react/styles.css";
+@import "@ttpfs/form-react/styles.css";
+```
+
 
 Wrap form với `FormProvider` và dùng `useForm` để khởi tạo:
 

@@ -44,7 +44,7 @@ export const DatePickerField = <T extends FieldValues>(
 					granularity={granularity}
 					hideTimeZone
 					hourCycle={24}
-					isDisabled={disabled}
+					isDisabled={disabled ?? field.disabled}
 					isInvalid={invalid}
 					isReadOnly={readonly}
 					isRequired={required}

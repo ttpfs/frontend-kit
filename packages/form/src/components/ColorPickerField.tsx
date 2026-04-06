@@ -1,3 +1,4 @@
+import { type ColorPickerFieldProps } from "@/types";
 import {
 	Button,
 	ColorArea,
@@ -13,7 +14,6 @@ import {
 	parseColor,
 } from "@ttpfs/ui-react";
 import { Controller, type FieldValues } from "react-hook-form";
-import { type ColorPickerFieldProps } from "@/types";
 
 const colorPresets = [
 	"#ef4444",
@@ -81,7 +81,7 @@ export const ColorPickerField = <T extends FieldValues>(
 									aria-label="Color area"
 									className="max-w-full"
 									colorSpace="hsb"
-									isDisabled={field.disabled ?? disabled}
+									isDisabled={disabled ?? field.disabled}
 									xChannel="saturation"
 									yChannel="brightness"
 								>

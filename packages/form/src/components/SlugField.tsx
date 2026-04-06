@@ -1,4 +1,3 @@
-import { useStore } from "@/hooks";
 import { type SlugFieldProps } from "@/types";
 import { toSlug } from "@/utils";
 import {
@@ -13,7 +12,12 @@ import {
 	Link,
 	TextField,
 } from "@ttpfs/ui-react";
-import { Controller, type FieldValues, type Path } from "react-hook-form";
+import {
+	Controller,
+	type FieldValues,
+	type Path,
+	useWatch,
+} from "react-hook-form";
 
 export const SlugField = <T extends FieldValues>(props: SlugFieldProps<T>) => {
 	const {
@@ -30,7 +34,7 @@ export const SlugField = <T extends FieldValues>(props: SlugFieldProps<T>) => {
 		sourceField = "name",
 	} = props;
 
-	const sourceValue = useStore({
+	const sourceValue = useWatch({
 		control,
 		name: sourceField as Path<T>,
 	});
@@ -53,7 +57,7 @@ export const SlugField = <T extends FieldValues>(props: SlugFieldProps<T>) => {
 					aria-label={label ?? name}
 					className={className?.wrapper}
 					fullWidth
-					isDisabled={field.disabled ?? disabled}
+					isDisabled={disabled ?? field.disabled}
 					isInvalid={invalid}
 					isReadOnly={readonly}
 					isRequired={required}

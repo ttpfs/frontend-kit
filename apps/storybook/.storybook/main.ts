@@ -1,4 +1,5 @@
 import { type StorybookConfig } from "@storybook/react-vite";
+import tailwindcss from "@tailwindcss/vite";
 import { dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -18,5 +19,10 @@ const config: StorybookConfig = {
 	],
 	framework: getAbsolutePath("@storybook/react-vite"),
 	stories: ["../src/__storybook__/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
+	viteFinal: (config) => {
+		config.plugins = config.plugins || [];
+		config.plugins.push(tailwindcss());
+		return config;
+	},
 };
 export default config;

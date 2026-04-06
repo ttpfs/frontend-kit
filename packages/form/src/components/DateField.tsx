@@ -37,7 +37,7 @@ export const DateField = <T extends FieldValues>(props: DateFieldProps<T>) => {
 					granularity={granularity}
 					hideTimeZone
 					hourCycle={24}
-					isDisabled={field.disabled ?? disabled}
+					isDisabled={disabled ?? field.disabled}
 					isInvalid={invalid}
 					isReadOnly={readonly}
 					isRequired={required}

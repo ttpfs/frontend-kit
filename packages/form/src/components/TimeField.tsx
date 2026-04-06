@@ -30,7 +30,7 @@ export const TimeField = <T extends FieldValues>(props: TimeFieldProps<T>) => {
 					aria-label={label ?? name}
 					className={className?.wrapper}
 					fullWidth
-					isDisabled={field.disabled ?? disabled}
+					isDisabled={disabled ?? field.disabled}
 					isInvalid={invalid}
 					isReadOnly={readonly}
 					isRequired={required}

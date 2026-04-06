@@ -35,7 +35,7 @@ export const NumberField = <T extends FieldValues>(
 					className={className?.wrapper}
 					formatOptions={format}
 					fullWidth
-					isDisabled={field.disabled ?? disabled}
+					isDisabled={disabled ?? field.disabled}
 					isInvalid={invalid}
 					isReadOnly={readonly}
 					isRequired={required}

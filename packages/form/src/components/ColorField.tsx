@@ -30,7 +30,7 @@ export const ColorField = <T extends FieldValues>(
 				<BaseColorField
 					className={className?.wrapper}
 					fullWidth
-					isDisabled={field.disabled ?? disabled}
+					isDisabled={disabled ?? field.disabled}
 					isInvalid={invalid}
 					isReadOnly={readonly}
 					isRequired={required}

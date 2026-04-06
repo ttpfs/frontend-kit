@@ -122,7 +122,7 @@ export const AutocompleteField = <T extends FieldValues>(
 			name={name}
 			render={({ field, fieldState: { invalid, error } }) => (
 				<Autocomplete
-					isDisabled={field.disabled ?? disabled}
+							isDisabled={disabled ?? field.disabled}
 					isInvalid={invalid}
 					isRequired={required}
 					onChange={field.onChange}

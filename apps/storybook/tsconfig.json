@@ -1,14 +1,10 @@
 {
 	"compilerOptions": {
-		"baseUrl": ".",
-		"ignoreDeprecations": "6.0",
-		"noEmit": false,
-		"paths": {
-			"@/*": ["./src/*"]
-		}
+		"composite": false,
+		"noEmit": true
 	},
 	"exclude": ["node_modules"],
 	"extends": "@packages/typescript-config/react-library.json",
-	"include": ["src", "vite.config.ts"],
+	"include": ["src", "vite.config.ts", ".storybook/**/*"],
 	"types": ["vite/client"]
 }

@@ -1,3 +1,4 @@
+import { type SliderFieldProps } from "@/types";
 import {
 	cn,
 	Description,
@@ -6,7 +7,6 @@ import {
 	TextField,
 } from "@ttpfs/ui-react";
 import { Controller, type FieldValues } from "react-hook-form";
-import { type SliderFieldProps } from "@/types";
 
 export const SliderField = <T extends FieldValues>(
 	props: SliderFieldProps<T>,
@@ -40,7 +40,7 @@ export const SliderField = <T extends FieldValues>(
 					<Slider
 						className={cn(className?.wrapper, "w-full max-w-xs")}
 						formatOptions={format}
-						isDisabled={field.disabled ?? disabled}
+						isDisabled={disabled ?? field.disabled}
 						label={label}
 						maxValue={maxValue}
 						minValue={minValue}

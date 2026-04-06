@@ -1,6 +1,6 @@
 # @ttpfs/table-react
 
-> Version: **0.2.2**
+> Version: **0.2.3**
 
 Thư viện data table cho React, xây dựng trên [TanStack Table v8](https://tanstack.com/table) và `@ttpfs/ui-react`.
 
@@ -22,6 +22,13 @@ pnpm add @ttpfs/table-react
 Package này yêu cầu `@ttpfs/ui-react` được cài đặt (tự động kéo theo khi cài package này).
 
 ## Setup
+
+Adding @ttpfs/table-react/styles.css below style library ui to apply custom style from library table
+
+```css
+@import "@ttpfs/ui-react/styles.css";
+@import "@ttpfs/table-react/styles.css";
+```
 
 ```tsx
 import { DataTable, useDataTable } from "@ttpfs/table-react";

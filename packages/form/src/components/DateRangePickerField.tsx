@@ -35,7 +35,7 @@ export const DateRangePickerField = <T extends FieldValues>(
 				<DateRangePicker
 					className={className?.wrapper}
 					endName="endDate"
-					isDisabled={field.disabled ?? disabled}
+					isDisabled={disabled ?? field.disabled}
 					isInvalid={invalid}
 					isReadOnly={readonly}
 					isRequired={required}
