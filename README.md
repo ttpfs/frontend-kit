@@ -23,12 +23,12 @@ A monorepo containing React UI component libraries, published to the GitHub Pack
 
 ```bash
 pnpm install
-pnpm build	Build all packages
-pnpm storybook	Run Storybook
-pnpm lint	Check linting with Biome
-pnpm format:fix	Automatically format code
-pnpm release	Build and publish all packages
-pnpm sync:readme	Sync package versions and content in README
+pnpm build	         // Build all packages
+pnpm storybook	     // Run Storybook
+pnpm lint	           // Check linting with Biome
+pnpm format:fix	     // Automatically format code
+pnpm release	       // Build and publish all packages
+pnpm sync:readme	   // Sync package versions and content in README
 ```
 
 All packages are published to the GitHub Package Registry (https://npm.pkg.github.com).
