@@ -1,6 +1,5 @@
 export {
 	cn,
-	type DateValue,
 	parseColor,
 	useFilter,
 	useLocale,

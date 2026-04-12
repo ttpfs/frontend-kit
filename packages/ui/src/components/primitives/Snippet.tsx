@@ -1,5 +1,6 @@
+import { useSnippet } from "@/hooks";
 import { cn } from "@heroui/react";
-import { type ReactNode, useState } from "react";
+import { type ReactNode } from "react";
 import { Tooltip } from "../overlay";
 import { Button } from "./Button";
 import { Icon } from "./icon";
@@ -71,24 +72,14 @@ function Snippet({
 	codeString,
 	onCopy,
 }: SnippetProps) {
-	const [copied, setCopied] = useState(false);
 	const isMultiLine = Array.isArray(children);
 	const lines = isMultiLine ? children : [children];
-	const textToCopy =
-		codeString || (isMultiLine ? lines.join("\n") : String(children));
 
-	const handleCopy = async () => {
-		if (disableCopy) return;
-
-		try {
-			await navigator.clipboard.writeText(textToCopy);
-			setCopied(true);
-			setTimeout(() => setCopied(false), 2000);
-			onCopy?.(textToCopy);
-		} catch (error) {
-			console.error("Failed to copy:", error);
-		}
-	};
+	const { copied, handleCopy } = useSnippet({
+		children,
+		codeString,
+		onCopy,
+	});
 
 	const symbolElement = hideSymbol ? null : (
 		<span className={cn("text-default-500", colorClasses[color], "opacity-60")}>

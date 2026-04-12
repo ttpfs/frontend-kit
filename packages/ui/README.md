@@ -114,6 +114,7 @@ export default function App() {
 | ----------- | ----------------------------------- |
 | `useTheme`  | Access and update the current theme |
 | `useMobile` | Detect mobile viewport              |
+| `useCopy` 	| Handle clipboard copying with temporary feedback |
 
 ## Notification
 
