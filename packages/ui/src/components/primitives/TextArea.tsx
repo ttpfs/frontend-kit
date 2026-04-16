@@ -6,7 +6,8 @@ import {
 
 import React from "react";
 
-interface TextAreaProps extends Omit<TextAreaRootProps, "value" | "onChange"> {
+interface TextAreaProps
+	extends Omit<TextAreaRootProps, "value" | "onChange" | "className"> {
 	value?: string;
 	onChange?: (value: string) => void;
 	countLabel?: string;
@@ -15,6 +16,10 @@ interface TextAreaProps extends Omit<TextAreaRootProps, "value" | "onChange"> {
 	isReadonly?: boolean;
 	fullWidth?: boolean;
 	variant?: "primary" | "secondary";
+	className?: {
+		textCount?: string;
+		input?: string;
+	};
 }
 
 const TextArea: React.FC<TextAreaProps> = (props) => {
@@ -30,6 +35,7 @@ const TextArea: React.FC<TextAreaProps> = (props) => {
 		maxLength = 512,
 		value,
 		id,
+		className,
 		...rest
 	} = props;
 
@@ -44,6 +50,7 @@ const TextArea: React.FC<TextAreaProps> = (props) => {
 		<div className="flex w-full flex-col gap-2">
 			<BaseTextArea
 				{...rest}
+				className={className?.input}
 				disabled={isDisabled}
 				fullWidth={fullWidth}
 				onChange={(event) => handleChange(event.target.value)}
@@ -53,7 +60,7 @@ const TextArea: React.FC<TextAreaProps> = (props) => {
 				value={value}
 				variant={variant}
 			/>
-			<Description id={`${id}-description`}>
+			<Description className={className?.textCount} id={`${id}-description`}>
 				{countLabel} {_value.length} / {maxLength}
 			</Description>
 		</div>

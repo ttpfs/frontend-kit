@@ -18,7 +18,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = (props) => {
 		children,
 		attribute = "class",
 		enableSystem = true,
-		disableTransitionOnChange = false,
+		disableTransitionOnChange = true,
 	} = props;
 	return (
 		<NextThemeProvider

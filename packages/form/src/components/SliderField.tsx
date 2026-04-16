@@ -3,6 +3,7 @@ import {
 	cn,
 	Description,
 	FieldError,
+	Label,
 	Slider,
 	TextField,
 } from "@ttpfs/ui-react";
@@ -21,6 +22,7 @@ export const SliderField = <T extends FieldValues>(
 		disabled,
 		orientation = "horizontal",
 		required,
+		defaultValue,
 		maxValue = 100,
 		format,
 		minValue = 0,
@@ -39,17 +41,36 @@ export const SliderField = <T extends FieldValues>(
 				>
 					<Slider
 						className={cn(className?.wrapper, "w-full max-w-xs")}
+						defaultValue={defaultValue}
 						formatOptions={format}
 						isDisabled={disabled ?? field.disabled}
-						label={label}
 						maxValue={maxValue}
 						minValue={minValue}
-						mode={mode}
 						onChange={field.onChange}
 						orientation={orientation}
 						step={step}
 						value={field.value ?? 0}
-					/>
+					>
+						<Label className={className?.label}>{label}</Label>
+						<Slider.Output />
+						{mode === "range" ? (
+							<Slider.Track>
+								{({ state }) => (
+									<>
+										<Slider.Fill />
+										{state.values.map((_, i) => (
+											<Slider.Thumb index={i} key={i} />
+										))}
+									</>
+								)}
+							</Slider.Track>
+						) : (
+							<Slider.Track>
+								<Slider.Fill />
+								<Slider.Thumb />
+							</Slider.Track>
+						)}
+					</Slider>
 					{invalid ? (
 						<FieldError>{error?.message}</FieldError>
 					) : (

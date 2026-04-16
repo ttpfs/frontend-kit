@@ -1,8 +1,7 @@
 export {
 	cn,
 	parseColor,
-	useFilter,
-	useLocale,
+	tv,
 } from "@heroui/react";
 export { formatValue } from "./format";
 export { getPageNumbers } from "./pagination";

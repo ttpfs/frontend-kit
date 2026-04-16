@@ -46,7 +46,9 @@ export const TextAreaField = <T extends FieldValues>(
 				>
 					<Label className={className?.label}>{label}</Label>
 					<TextArea
-						className={cn(className?.input, "text-sm placeholder:text-sm")}
+						className={{
+							input: cn(className?.input, "text-sm placeholder:text-sm"),
+						}}
 						maxLength={maxLength}
 						placeholder={placeholder}
 						rows={rows}

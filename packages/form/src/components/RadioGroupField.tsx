@@ -1,5 +1,11 @@
 import { type RadioGroupFieldProps } from "@/types";
-import { FieldError, RadioGroup } from "@ttpfs/ui-react";
+import {
+	Description,
+	FieldError,
+	Label,
+	Radio,
+	RadioGroup,
+} from "@ttpfs/ui-react";
 import { Controller, type FieldValues } from "react-hook-form";
 
 export const RadioGroupField = <T extends FieldValues>(
@@ -8,6 +14,7 @@ export const RadioGroupField = <T extends FieldValues>(
 	const {
 		label,
 		name,
+		className,
 		control,
 		description,
 		disabled,
@@ -23,22 +30,35 @@ export const RadioGroupField = <T extends FieldValues>(
 			render={({ field, fieldState: { invalid, error } }) => (
 				<div className="flex flex-col gap-2">
 					<RadioGroup
-						description={description}
 						isDisabled={disabled ?? field.disabled}
 						isInvalid={invalid}
 						isReadOnly={readonly}
 						isRequired={required}
-						items={options.map((item) => ({
-							description: item.meta?.description,
-							label: item.label,
-							value: item.id,
-						}))}
-						label={label}
 						name={field.name}
 						onChange={field.onChange}
 						orientation={orientation}
 						value={field.value ?? ""}
-					/>
+					>
+						<Label className={className?.label}>{label}</Label>
+						{description && (
+							<Description className={className?.description}>
+								{description}
+							</Description>
+						)}
+						{options.map((item) => (
+							<Radio key={item.id} value={item.id}>
+								<Radio.Control>
+									<Radio.Indicator />
+								</Radio.Control>
+								<Radio.Content>
+									<Label>{item.label}</Label>
+									{item.meta?.description && (
+										<Description>{item.meta?.description}</Description>
+									)}
+								</Radio.Content>
+							</Radio>
+						))}
+					</RadioGroup>
 					{invalid && <FieldError>{error?.message}</FieldError>}
 				</div>
 			)}
