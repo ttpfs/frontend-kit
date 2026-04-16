@@ -1,11 +1,16 @@
-import { Separator, Skeleton, type TooltipContent } from "@heroui/react";
+import { Drawer, Tooltip } from "@/components/overlay";
+import { Button, Icon, Input } from "@/components/primitives";
+import { useSidebar } from "@/context";
+import {
+	Description,
+	Separator,
+	Skeleton,
+	type TooltipContent,
+} from "@heroui/react";
 import { cn } from "@heroui/styles";
 import { cva, type VariantProps } from "class-variance-authority";
 import { Slot } from "radix-ui";
 import * as React from "react";
-import { Drawer, type DrawerPlacement, Tooltip } from "@/components/overlay";
-import { Button, Icon, Input } from "@/components/primitives";
-import { useSidebar } from "@/context";
 
 const SIDEBAR_WIDTH_MOBILE = "18rem";
 
@@ -18,7 +23,7 @@ function SidebarRoot({
 	dir,
 	...props
 }: React.ComponentProps<"div"> & {
-	side?: DrawerPlacement;
+	side?: "top" | "bottom" | "left" | "right";
 	variant?: "sidebar" | "floating" | "inset";
 	collapsible?: "offcanvas" | "icon" | "none";
 }) {
@@ -42,26 +47,28 @@ function SidebarRoot({
 	if (isMobile) {
 		return (
 			<Drawer isOpen={openMobile} onOpenChange={setOpenMobile}>
-				<Drawer.Content
+				<Drawer.Backdrop
 					className="w-(--sidebar-width) bg-sidebar p-0 text-sidebar-foreground [&>button]:hidden"
 					data-mobile="true"
 					data-sidebar="sidebar"
 					data-slot="sidebar"
 					dir={dir}
-					placement={side}
 					style={
 						{
 							"--sidebar-width": SIDEBAR_WIDTH_MOBILE,
 						} as React.CSSProperties
 					}
 				>
-					<Drawer.Header
-						className="sr-only"
-						description="Displays the mobile sidebar."
-						heading="Sidebar"
-					/>
-					<div className="flex h-full w-full flex-col">{children}</div>
-				</Drawer.Content>
+					<Drawer.Content placement={side}>
+						<Drawer.Dialog>
+							<Drawer.Header className="sr-only">
+								<Drawer.Heading>Sidebar</Drawer.Heading>
+								<Description>Displays the mobile sidebar.</Description>
+							</Drawer.Header>
+							<div className="flex h-full w-full flex-col">{children}</div>
+						</Drawer.Dialog>
+					</Drawer.Content>
+				</Drawer.Backdrop>
 			</Drawer>
 		);
 	}
@@ -114,7 +121,7 @@ function SidebarRoot({
 
 function SidebarTrigger({
 	className,
-	onClick,
+	onPress,
 	...props
 }: React.ComponentProps<typeof Button>) {
 	const { toggleSidebar, open } = useSidebar();
@@ -125,8 +132,8 @@ function SidebarTrigger({
 			data-sidebar="trigger"
 			data-slot="sidebar-trigger"
 			isIconOnly
-			onClick={(event) => {
-				onClick?.(event);
+			onPress={(event) => {
+				onPress?.(event);
 				toggleSidebar();
 			}}
 			size="sm"
@@ -393,8 +400,12 @@ function SidebarMenuButton({
 			<Tooltip.Content
 				hidden={state !== "collapsed" || isMobile}
 				placement="right"
+				showArrow
 				{...tooltip}
-			/>
+			>
+				<Tooltip.Arrow />
+				{tooltip.children}
+			</Tooltip.Content>
 		</Tooltip>
 	);
 }

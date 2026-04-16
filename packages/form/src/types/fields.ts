@@ -245,9 +245,11 @@ export interface SliderFieldProps<
 	mode?: "range" | "default";
 	maxValue?: number; // default 100
 	minValue?: number; // default 0
+	defaultValue?: number | [number, number]; // default 0
 	format?: Intl.NumberFormatOptions;
 	step?: number; // default 1
 	className?: {
+		label?: string;
 		description?: string;
 		wrapper?: string;
 	};

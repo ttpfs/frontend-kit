@@ -1,3 +1,6 @@
+import { useDataTableState } from "@/hooks/useDataTableState";
+import { type DataTableProps } from "@/types";
+import { toSortDescriptor, toSortingState } from "@/utils";
 import {
 	type ExpandedState,
 	flexRender,
@@ -20,9 +23,6 @@ import {
 	Table,
 } from "@ttpfs/ui-react";
 import { useMemo, useState } from "react";
-import { useDataTableState } from "@/hooks/useDataTableState";
-import { type DataTableProps } from "@/types";
-import { toSortDescriptor, toSortingState } from "@/utils";
 import { SortableColumnHeader } from "./column";
 import { DataTableViewOptions } from "./DataTableViewOptions";
 
@@ -118,7 +118,11 @@ export const DataTable = <TData, TValue>(
 						<Table.Header className="sticky top-0 z-10 bg-surface-secondary">
 							{enableSelection && (
 								<Table.Column className="pr-0">
-									<Checkbox aria-label="Select all" slot="selection" />
+									<Checkbox aria-label="Select all" slot="selection">
+										<Checkbox.Control>
+											<Checkbox.Indicator />
+										</Checkbox.Control>
+									</Checkbox>
 								</Table.Column>
 							)}
 							{table.getHeaderGroups()[0]?.headers.map((header) => (
@@ -163,7 +167,11 @@ export const DataTable = <TData, TValue>(
 												aria-label={`Select ${row.id}`}
 												slot="selection"
 												variant="secondary"
-											/>
+											>
+												<Checkbox.Control>
+													<Checkbox.Indicator />
+												</Checkbox.Control>
+											</Checkbox>
 										</Table.Cell>
 									)}
 									{row.getVisibleCells().map((cell) => (

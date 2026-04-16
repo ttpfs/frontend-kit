@@ -1,8 +1,7 @@
-import { Skeleton } from "@heroui/react";
+import { Skeleton, useIsHydrated } from "@heroui/react";
 import { cn } from "@heroui/styles";
 import { useTheme } from "next-themes";
 import type React from "react";
-import { useEffect, useState } from "react";
 import { Tooltip } from "../overlay";
 import { Button, type ButtonProps, Icon } from "../primitives";
 
@@ -25,7 +24,7 @@ export const ThemeSwitcher: React.FC<ThemeSwitcherProps> = (props) => {
 	const { className, variant = "outline", ...rest } = props;
 	const { resolvedTheme, setTheme } = useTheme();
 
-	const [mounted, setMounted] = useState(false);
+	const isMounted = useIsHydrated();
 
 	const renderLabel = () => {
 		switch (resolvedTheme) {
@@ -38,10 +37,6 @@ export const ThemeSwitcher: React.FC<ThemeSwitcherProps> = (props) => {
 		}
 	};
 
-	useEffect(() => {
-		setMounted(true);
-	}, []);
-
 	const toggleTheme = () => {
 		if (resolvedTheme === "dark") setTheme("light");
 		else setTheme("dark");
@@ -49,15 +44,15 @@ export const ThemeSwitcher: React.FC<ThemeSwitcherProps> = (props) => {
 
 	const isDark = resolvedTheme === "dark";
 
-	if (!mounted)
+	if (!isMounted)
 		return <Skeleton className={cn(className?.skeleton, "h-9 w-9")} />;
 
 	return (
-		<Tooltip>
+		<Tooltip delay={100}>
 			<Button
 				className={cn(
 					className?.root,
-					"rounded-lg font-medium whitespace-nowrap",
+					"rounded-lg group font-medium whitespace-nowrap",
 				)}
 				isIconOnly
 				onPress={toggleTheme}
@@ -68,7 +63,7 @@ export const ThemeSwitcher: React.FC<ThemeSwitcherProps> = (props) => {
 					<Icon
 						className={cn(
 							className?.lightIcon,
-							"text-neutral-500 dark:text-neutral-400",
+							"text-neutral-500 group-hover:text-white dark:text-neutral-400",
 						)}
 						name="moon"
 					/>
@@ -76,13 +71,16 @@ export const ThemeSwitcher: React.FC<ThemeSwitcherProps> = (props) => {
 					<Icon
 						className={cn(
 							className?.darkIcon,
-							"text-neutral-500 dark:text-neutral-400",
+							"text-neutral-500 group-hover:text-black dark:text-neutral-400",
 						)}
 						name="sun"
 					/>
 				)}
 			</Button>
-			<Tooltip.Content>{renderLabel()}</Tooltip.Content>
+			<Tooltip.Content offset={6}>
+				<Tooltip.Arrow />
+				{renderLabel()}
+			</Tooltip.Content>
 		</Tooltip>
 	);
 };
