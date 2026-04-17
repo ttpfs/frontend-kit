@@ -6,8 +6,7 @@ import {
 } from "react-hook-form";
 
 interface FormProviderProps<TFieldValues extends FieldValues>
-	extends PropsWithChildren,
-		React.FormHTMLAttributes<HTMLFormElement> {
+	extends PropsWithChildren {
 	form: UseFormReturn<TFieldValues>;
 }
 
