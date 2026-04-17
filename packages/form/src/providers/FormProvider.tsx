@@ -6,19 +6,15 @@ import {
 } from "react-hook-form";
 
 interface FormProviderProps<TFieldValues extends FieldValues>
-	extends PropsWithChildren {
+	extends PropsWithChildren,
+		React.FormHTMLAttributes<HTMLFormElement> {
 	form: UseFormReturn<TFieldValues>;
-	onSubmit: () => Promise<void> | void;
 }
 
 export const FormProvider = <TFieldValues extends FieldValues>(
 	props: FormProviderProps<TFieldValues>,
 ) => {
-	const { children, form, onSubmit } = props;
+	const { children, form } = props;
 
-	return (
-		<BaseFormProvider {...form}>
-			<form onSubmit={onSubmit}>{children}</form>
-		</BaseFormProvider>
-	);
+	return <BaseFormProvider {...form}>{children}</BaseFormProvider>;
 };

@@ -58,5 +58,5 @@
 	"sideEffects": true,
 	"type": "module",
 	"types": "./dist/index.d.ts",
-	"version": "0.3.6"
+	"version": "0.3.7"
 }
