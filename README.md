@@ -14,7 +14,7 @@ This project focuses on building a reusable abstraction layer to improve develop
 |---|---|---|
 | [`@ttpfs/form-react`](./packages/form) | `0.3.9` | Type-safe React form library built with react-hook-form, Zod, and HeroUI. |
 | [`@ttpfs/table-react`](./packages/table) | `0.2.5` | Flexible React table built on TanStack Table with a polished HeroUI layer. |
-| [`@ttpfs/ui-react`](./packages/ui) | `2.0.0` | React UI component library built on HeroUI (using Tailwind CSS v4) with simplified APIs and theming support. |
+| [`@ttpfs/ui-react`](./packages/ui) | `2.0.1` | React UI component library built on HeroUI (using Tailwind CSS v4) with simplified APIs and theming support. |
 
 <!-- PACKAGES_TABLE_END -->
 

@@ -1,7 +1,7 @@
+import { formatValue } from "@/utils";
 import { cn } from "@heroui/react";
 import { isValid, type Locale } from "date-fns";
 import { vi } from "date-fns/locale";
-import { formatValue } from "@/utils";
 
 type ValueType = "date" | "percent" | "price" | "number" | "text";
 
@@ -50,7 +50,7 @@ export const ValueDisplay: React.FC<Props> = (props) => {
 		}
 		case "price":
 			return (
-				<span>
+				<span className={cn(className)}>
 					{new Intl.NumberFormat("vi-VN", {
 						currency: "VND",
 						style: "currency",
@@ -58,11 +58,13 @@ export const ValueDisplay: React.FC<Props> = (props) => {
 				</span>
 			);
 		case "percent":
-			return <span>{Number(value).toFixed(2)}%</span>;
+			return <span className={cn(className)}>{Number(value).toFixed(2)}%</span>;
 
 		default:
 			return (
-				<span className="leading-relaxed line-clamp-3">{String(value)}</span>
+				<span className={cn("leading-relaxed line-clamp-3", className)}>
+					{String(value)}
+				</span>
 			);
 	}
 };
